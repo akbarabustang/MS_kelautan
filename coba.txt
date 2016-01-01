@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 tes
 akbar
+=======
+tes
+>>>>>>> afb01e2b81adf0bac82989d73911a65b11eaf968
