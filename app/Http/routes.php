@@ -5,11 +5,9 @@
 //     return view('welcome');
 // });
 
-Route::get('/app/index', function () {
+Route::get('beranda', function () {
     return view('app.beranda.index');
 });
-
-Route::get('app', 'BerandaController@index');
 
 Route::get('/app/pembudidaya', function () {
     return view('app.pembudidaya.index');
