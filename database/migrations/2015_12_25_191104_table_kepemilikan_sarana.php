@@ -13,7 +13,7 @@ class TableKepemilikanSarana extends Migration
     public function up()
     {
     
-        Schema::create('kepemilikan_sarana', function(Blueprint $t)
+        Schema::create('msakti_kepemilikan_sarana', function(Blueprint $t)
         {
             $t->integer('id_sub_sarana');
             $t->integer('id_user');

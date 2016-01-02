@@ -12,7 +12,7 @@ class CreateMenuTable extends Migration
      */
     public function up()
     {
-        Schema::create('menu', function (Blueprint $table) {
+        Schema::create('msakti_menu', function (Blueprint $table) {
             $table->increments('id');
             $table->string('judul',50);
             $table->string('link');

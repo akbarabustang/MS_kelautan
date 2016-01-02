@@ -12,7 +12,7 @@ class TabelSubSarana extends Migration
      */
     public function up()
     {
-        Schema::create('sub_sarana', function (Blueprint $table) {
+        Schema::create('msakti_sub_sarana', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama');
             $table->integer('id_sarana');

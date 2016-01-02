@@ -12,7 +12,7 @@ class CreateBlogTable extends Migration
      */
     public function up()
     {
-        Schema::create('blog', function (Blueprint $table) {
+        Schema::create('msakti_blog', function (Blueprint $table) {
             $table->increments('id');
             $table->string('judul');
             $table->string('slug')->unique();

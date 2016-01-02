@@ -12,7 +12,7 @@ class TabelSubUsaha extends Migration
      */
     public function up()
     {
-        Schema::create('sub_usaha', function (Blueprint $table) {
+        Schema::create('msakti_sub_usaha', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama');
             $table->integer('id_usaha');

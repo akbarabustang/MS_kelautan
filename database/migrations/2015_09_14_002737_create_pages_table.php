@@ -12,7 +12,7 @@ class CreatePagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('pages', function (Blueprint $table) {
+        Schema::create('msakti_pages', function (Blueprint $table) {
             $table->increments('id');
             $table->string('judul');
             $table->string('slug')->unique();

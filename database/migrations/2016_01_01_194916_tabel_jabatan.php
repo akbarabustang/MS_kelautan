@@ -12,7 +12,7 @@ class TabelJabatan extends Migration
      */
     public function up()
     {
-        Schema::create('jabatan', function (Blueprint $table) {
+        Schema::create('msakti_jabatan', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama',30);
         });

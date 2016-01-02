@@ -13,7 +13,7 @@ class TabelSarana extends Migration
     public function up()
     {
     
-        Schema::create('sarana', function(Blueprint $t)
+        Schema::create('msakti_sarana', function(Blueprint $t)
         {
             $t->increments('id')->unsigned();
             $t->string('nama');

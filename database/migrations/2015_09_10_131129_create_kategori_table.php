@@ -12,7 +12,7 @@ class CreateKategoriTable extends Migration
      */
     public function up()
     {
-        Schema::create('kategori', function (Blueprint $table) {
+        Schema::create('msakti_kategori', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama_kategori');
             $table->string('slug')->unique();

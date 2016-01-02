@@ -12,7 +12,7 @@ class CreateGaleriTable extends Migration
      */
     public function up()
     {
-        Schema::create('galeri', function( Blueprint $table ) {
+        Schema::create('msakti_galeri', function( Blueprint $table ) {
             $table->increments('id');
             $table->string('judul',100);
             $table->string('nama_file',100);
