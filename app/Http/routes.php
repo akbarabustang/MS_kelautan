@@ -5,8 +5,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/app/index', function () {
-    return view('app.index');
+Route::get('/app/main', function () {
+    return view('app.main');
 });
 
 Route::get('/app/pembudidaya', function () {

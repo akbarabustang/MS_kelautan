@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class IndexController extends Controller
+class MainController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view('app.index', compact('index'));
+        return view('app.main', compact('main'));
     }
 
     /**
