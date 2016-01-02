@@ -1,4 +1,4 @@
-@extends('admin.template')
+@extends('layout.main')
 
 @section('konten')
 {{-- konten --}}
