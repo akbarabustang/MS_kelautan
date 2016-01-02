@@ -6,19 +6,19 @@ Route::get('/', function () {
 });
 
 Route::get('/app/layout', function () {
-    return view('app.main');
+    return view('app.layout.main');
 });
 
 Route::get('/app/layout/master/pembudidaya', function () {
-    return view('app.pembudidaya');
+    return view('app.master.pembudidaya');
 });
 
 Route::get('/app/layout/master/nelayan', function () {
-    return view('app.nelayan');
+    return view('app.master.nelayan');
 });
 
 Route::get('/app/layout/master/pengolah', function () {
-    return view('app.pengolah');
+    return view('app.master.pengolah');
 });
 
 Route::get('/app/master', function () {
