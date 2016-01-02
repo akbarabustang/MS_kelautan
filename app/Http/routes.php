@@ -5,16 +5,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/app', function () {
+Route::get('/app/layout', function () {
     return view('app.main');
 });
 
-Route::get('/app/pembudidaya', function () {
+Route::get('/app/layout/master/pembudidaya', function () {
     return view('app.pembudidaya');
 });
 
-Route::get('/app/nelayan', function () {
+Route::get('/app/layout/master/nelayan', function () {
     return view('app.nelayan');
+});
+
+Route::get('/app/layout/master/pengolah', function () {
+    return view('app.pengolah');
 });
 
 Route::get('/app/master', function () {
@@ -23,10 +27,6 @@ Route::get('/app/master', function () {
 
 Route::get('/app/pengaturan', function () {
     return view('app.pengaturan');
-});
-
-Route::get('/app/pengolah', function () {
-    return view('app.pengolah');
 });
 
 Route::get('/app/login', function () {
