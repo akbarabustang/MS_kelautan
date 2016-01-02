@@ -16,7 +16,7 @@ class BerandaController extends Controller
      */
     public function index()
     {
-        return view('app.main', compact('main'));
+        return view('app.beranda.index');
     }
 
     /**

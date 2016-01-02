@@ -9,16 +9,18 @@ Route::get('/app/index', function () {
     return view('app.beranda.index');
 });
 
+Route::get('app', 'BerandaController@index');
+
 Route::get('/app/pembudidaya', function () {
-    return view('app.pembudidaya');
+    return view('app.pembudidaya.index');
 });
 
 Route::get('/app/nelayan', function () {
-    return view('app.nelayan');
+    return view('app.nelayan.index');
 });
 
 Route::get('/app/pengolah', function () {
-    return view('app.pengolah');
+    return view('app.pengolah.index');
 });
 
 Route::get('/app/master/bantuan', function () {
@@ -38,11 +40,11 @@ Route::get('/app/master/sarana-pembudidaya', function () {
 });
 
 Route::get('/app/pengaturan', function () {
-    return view('app.pengaturan');
+    return view('app.pengaturan.index');
 });
 
 Route::get('/app/login', function () {
-    return view('app.login');
+    return view('app.login.index');
 });
 
 Route::group(['middleware' => ['web']], function () {

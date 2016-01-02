@@ -16,7 +16,7 @@ class NelayanController extends Controller
      */
     public function index()
     {
-        return view('app.nelayan', compact('nelayan'));
+        return view('app.nelayan.index', compact('nelayan'));
     }
 
     /**
