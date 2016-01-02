@@ -12,7 +12,7 @@ class TabelUsaha extends Migration
      */
     public function up()
     {
-        Schema::create('msakti_usaha', function (Blueprint $t) {
+        Schema::create('app_usaha', function (Blueprint $t) {
             $t->increments('id')->unsigned();
             $t->string('nama');
         });

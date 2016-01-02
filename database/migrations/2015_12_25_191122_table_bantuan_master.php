@@ -13,7 +13,7 @@ class TableBantuanMaster extends Migration
     public function up()
     {
     
-        Schema::create('msakti_bantuan_master', function(Blueprint $t)
+        Schema::create('app_bantuan_master', function(Blueprint $t)
         {
             $t->increments('id')->unsigned();
             $t->string('nama');

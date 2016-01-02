@@ -13,7 +13,7 @@ class TabelBantuan extends Migration
     public function up()
     {
     
-        Schema::create('msakti_bantuan', function(Blueprint $t)
+        Schema::create('app_bantuan', function(Blueprint $t)
         {
             $t->bigIncrements('id')->unsigned();
             $t->string('id_user');

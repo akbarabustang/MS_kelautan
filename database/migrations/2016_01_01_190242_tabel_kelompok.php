@@ -13,7 +13,7 @@ class TabelKelompok extends Migration
     public function up()
     {
     
-        Schema::create('msakti_kelompok', function(Blueprint $t)
+        Schema::create('app_kelompok', function(Blueprint $t)
         {
             $t->increments('id');
             $t->string('nama',50);

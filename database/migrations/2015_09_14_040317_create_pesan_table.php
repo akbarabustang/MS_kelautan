@@ -12,7 +12,7 @@ class CreatePesanTable extends Migration
      */
     public function up()
     {
-        Schema::create('msakti_pesan', function (Blueprint $table) {
+        Schema::create('site_pesan', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama',50);
             $table->string('email',100);
