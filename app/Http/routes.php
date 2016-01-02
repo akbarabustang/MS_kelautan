@@ -5,7 +5,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/app', function () {
+Route::get('app', function () {
     return view('app.main');
 });
 
