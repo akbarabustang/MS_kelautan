@@ -1,7 +1,7 @@
 @extends('app.layout.main')
 
 @section('konten')
-konten
+dashboard
 @endsection
 
 @section('footer')

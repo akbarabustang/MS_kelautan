@@ -1,12 +1,12 @@
 <?php
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/app/layout', function () {
-    return view('app.layout.main');
+Route::get('/app/index', function () {
+    return view('app.beranda.index');
 });
 
 Route::get('/app/pembudidaya', function () {
