@@ -1,1 +1,9 @@
-login.blade.php
+@extends('app.layout.main')
+
+@section('konten')
+konten
+@endsection
+
+@section('footer')
+footer
+@endsection

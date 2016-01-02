@@ -1,9 +1,9 @@
-@extends('layout.main')
+@extends('app.layout.main')
 
 @section('konten')
-{{-- konten --}}
+konten
 @endsection
 
 @section('footer')
-{{-- footer --}}
+footer
 @endsection
