@@ -5,6 +5,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/app/index', function () {
+    return view('app.index');
+});
+
 Route::get('/app/pembudidaya', function () {
     return view('app.pembudidaya');
 });
@@ -25,6 +29,12 @@ Route::get('/app/pengolah', function () {
     return view('app.pengolah');
 });
 
+Route::get('/app/login', function () {
+    return view('app.login');
+});
+
 Route::group(['middleware' => ['web']], function () {
     //
 });
+
+
