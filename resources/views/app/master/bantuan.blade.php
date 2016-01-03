@@ -51,7 +51,7 @@
 							<div class="panel-body">
 								<h5>Bantuan</h5>
 								<p>* Bantuan adalah item yang digunakan pada halaman pembudidaya dan nelayan.</p>
-								<form class="form-horizontal style-form" method="GET" action="">
+								<form class="style-form" method="GET" action="">
                 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 									<div class="form-group form-group-default required">
 										<label>Nama Bantuan</label>
