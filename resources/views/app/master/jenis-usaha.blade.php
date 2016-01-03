@@ -89,6 +89,7 @@
 											</tr>
 										</thead>
 										<tbody>
+											@foreach($jenisusaha as $js)
 											<tr>
 												<td>
 													<div class="checkbox">
@@ -96,19 +97,10 @@
 														<label for="checkbox1" class="m-l-20"></label>
 													</div>
 												</td>
-												<td>Budidaya Air Laut</td>
-												<td>Rumput Laut</td>
+												<td>{{ $js->id_sub_usaha }}</td>
+												<td>{{ $js->id_user }}</td>
 											</tr>
-											<tr>
-												<td>
-													<div class="checkbox">
-														<input type="checkbox" value="2" id="checkbox2">
-														<label for="checkbox2" class="m-l-20"></label>
-													</div>
-												</td>
-												<td>Budidaya Air Laut</td>
-												<td>KJA</td>
-											</tr>
+											@endforeach
 										</tbody>
 									</table>
 								</div>

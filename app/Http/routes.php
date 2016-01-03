@@ -57,6 +57,10 @@ Route::group(['namespace' => 'App' ], function () {
         [
             'getIndex'  => 'jabatan',
         ]);
+     Route::controller('app/master/jenis-usaha', 'JenisusahaController',
+        [
+            'getIndex'  => 'jenis-usaha',
+        ]);
 });
 
 
