@@ -17,7 +17,7 @@ class BantuanController extends Controller
      */
      public function getIndex()
     {
-        $data['bantuan'] = Bantuan::paginate(20);
+        $data['bantuan'] = Bantuan::All();
         return view('app.master.bantuan', $data);
     }
 
