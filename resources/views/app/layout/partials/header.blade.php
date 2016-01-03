@@ -28,7 +28,7 @@
 
 			<!-- BEGIN SIDEBAR MENU HEADER-->
 			<div class="sidebar-header">
-				<a href="/"><img src="{{ url('resources/assets/app/img/logo_white.png') }}" alt="logo" class="brand" data-src="{{ url('resources/assets/app/img/logo_white.png') }}" data-src-retina="{{ url('resources/assets/app/img/logo_white_2x.png') }}" height="32"></a>
+				<a href="/app/"><img src="{{ url('resources/assets/app/img/logo_white.png') }}" alt="logo" class="brand" data-src="{{ url('resources/assets/app/img/logo_white.png') }}" data-src-retina="{{ url('resources/assets/app/img/logo_white_2x.png') }}" height="32"></a>
 				<div class="sidebar-header-controls">
 					<button type="button" class="btn btn-xs sidebar-slide-toggle btn-link m-l-20" data-pages-toggle="#appMenu"><i class="fa fa-angle-down fs-16"></i></button>
 					<button type="button" class="btn btn-link visible-lg-inline" data-toggle-pin="sidebar"><i class="fa fs-12"></i></button>
@@ -42,6 +42,7 @@
 				<ul class="menu-items">
 					<li class="m-t-30 link-home">
 						<a href="/app/beranda"><span class="title">Beranda</span></a>
+
 						<span class="icon-thumbnail"><i class="pg-home"></i></span>
 					</li>
 					<li class="link-pembudidaya">
@@ -49,7 +50,7 @@
 						<span class="icon-thumbnail">P</span>
 					</li>
 					<li class="link-nelayan">
-						<a href="/app/app/nelayan"><span class="title">Nelayan</span></a>
+						<a href="/app/nelayan"><span class="title">Nelayan</span></a>
 						<span class="icon-thumbnail">N</span>
 					</li>
 					<li class="link-pengolah">
@@ -136,7 +137,7 @@
 		<div class=" pull-left sm-table">
 			<div class="header-inner">
 				<div class="brand inline m-l-25">
-					<a href="/"><img src="{{ url('resources/assets/app/img/logo.png') }}" alt="logo" data-src="{{ url('resources/assets/app/img/logo.png') }}" data-src-retina="{{ url('resources/assets/app/img/logo_2x.png') }}" height="32"></a>
+					<a href="/app/"><img src="{{ url('resources/assets/app/img/logo.png') }}" alt="logo" data-src="{{ url('resources/assets/app/img/logo.png') }}" data-src-retina="{{ url('resources/assets/app/img/logo_2x.png') }}" height="32"></a>
 				</div>
 
 				<!-- START NOTIFICATION LIST -->
@@ -280,12 +281,7 @@
 				</ul>
 				<!-- END NOTIFICATIONS LIST -->
 
-				<a href="#" class="search-link" data-toggle="search"><i class="pg-search"></i>Ketik apa saja untuk <span class="bold">mencari</span></a> </div>
-		</div>
-
-		<div class=" pull-right">
-			<div class="header-inner">
-				<a href="#" class="btn-link icon-set menu-hambuger-plus m-l-20 sm-no-margin hidden-sm hidden-xs" data-toggle="quickview" data-toggle-element="#quickview"></a>
+				<a href="#" class="search-link" data-toggle="search"><i class="pg-search"></i>Ketik apa saja untuk <span class="bold">mencari</span></a>
 			</div>
 		</div>
 

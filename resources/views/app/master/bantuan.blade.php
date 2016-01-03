@@ -48,7 +48,7 @@
 								<form class="" role="form">
 									<div class="form-group form-group-default required">
 										<label>Nama Bantuan</label>
-										<input type="email" class="form-control" required>
+										<input type="text" class="form-control" required>
 									</div>
 									<div class="form-group">
 										<button class="btn btn-primary btn-cons">Tambah</button>
