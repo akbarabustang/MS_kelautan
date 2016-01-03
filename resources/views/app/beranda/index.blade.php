@@ -1,5 +1,11 @@
 @extends('app.layout.main')
 
+@section('title')
+	Dinas Perikanan Bantaeng
+@endsection
+
+
+
 @section('konten')
 <!-- START PAGE-CONTAINER -->
 <div class="page-container">
@@ -525,7 +531,6 @@
 
 @section('registerscript')
 	<script>
-		$(".menu-items .link-master").addClass("active open");
-		$(".menu-items .link-master .sub-bantuan").addClass("active");
+		$(".menu-items .link-home").addClass("active");
 	</script>
 @endsection
