@@ -17791,3 +17791,14 @@ if("undefined"!=typeof e){var target=$(e.target);if(target.parent(".page-sidebar
     })
     
 })(window.jQuery);;
+/* Check Delete */
+$(".table .checkbox input").change(function() {
+	var check = $(".table .checkbox input:checked").length;
+	if (check > 0) {
+		$(".btn-check").removeAttr("disabled");
+		console.log(check);
+	} else {
+		$(".btn-check").attr("disabled","true");
+		console.log(check);
+	}
+});

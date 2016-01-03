@@ -74,7 +74,7 @@
 										<thead>
 											<tr>
 												<th width="70">
-													<button class="btn" data-toggle="modal" data-target="#modal-hapus"><i class="pg-trash"></i></button>
+													<button class="btn btn-check" data-toggle="modal" data-target="#modal-hapus" disabled><i class="pg-trash"></i></button>
 												</th>
 												<th>Jabatan</th>
 											</tr>
@@ -83,11 +83,20 @@
 											<tr>
 												<td>
 													<div class="checkbox">
-														<input type="checkbox" value="3" id="checkbox1">
+														<input type="checkbox" value="1" id="checkbox1">
 														<label for="checkbox1" class="m-l-20"></label>
 													</div>
 												</td>
 												<td>Ketua</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="checkbox">
+														<input type="checkbox" value="2" id="checkbox2">
+														<label for="checkbox2" class="m-l-20"></label>
+													</div>
+												</td>
+												<td>Bendahara</td>
 											</tr>
 										</tbody>
 									</table>
