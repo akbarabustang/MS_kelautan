@@ -5,7 +5,7 @@
 //     return view('welcome');
 // });
 
-Route::get('beranda', function () {
+Route::get('/app/beranda', function () {
     return view('app.beranda.index');
 });
 
