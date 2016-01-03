@@ -1,5 +1,11 @@
 @extends('app.layout.main')
 
+@section('title')
+	Master | Bantuan
+@endsection
+
+
+
 @section('konten')
 
 <!-- START PAGE-CONTAINER -->
