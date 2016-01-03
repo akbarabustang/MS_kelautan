@@ -51,14 +51,14 @@
 							<div class="panel-body">
 								<h5>Bantuan</h5>
 								<p>* Bantuan adalah item yang digunakan pada halaman pembudidaya dan nelayan.</p>
-								<form class="style-form" method="GET" action="">
+								<form class="form-horizontal style-form" method="GET" action="{{ route('bantuan_tambah') }}">
                 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 									<div class="form-group form-group-default required">
 										<label>Nama Bantuan</label>
-										<input type="text" class="form-control" required>
+										<input type="text" name="nama" class="form-control" required>
 									</div>
 									<div class="form-group">
-										<button class="btn btn-primary btn-cons">Tambah</button>
+										<button type="submit" class="btn btn-primary btn-cons">Tambah</button>
 									</div>
 								</form>
 							</div>
@@ -136,14 +136,14 @@
 		<div class="modal-content-wrapper">
 			<div class="modal-content">
 				<div class="modal-header clearfix text-left">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="pg-close fs-14"></i></button>
+					<button type="button" class="close" data-dismiss="modal"  aria-hidden="true"><i class="pg-close fs-14"></i></button>
 					<h5>Hapus Data</h5>
 				</div>
 				<div class="modal-body">
 					<p class="no-margin">Data akan dihapus. Apakah Anda yakin?</p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-danger btn-cons pull-left inline" data-dismiss="modal">Ya</button>
+					<button type="button" class="btn btn-danger btn-cons pull-left inline" href="{{ route('bantuan_hapus') }}" data-dismiss="modal">Ya</button>
 					<button type="button" class="btn btn-default btn-cons no-margin pull-left inline" data-dismiss="modal">Tidak</button>
 				</div>
 			</div>

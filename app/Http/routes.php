@@ -52,10 +52,13 @@ Route::group(['namespace' => 'App' ], function () {
     Route::controller('app/master/bantuan', 'BantuanController',
         [
             'getIndex'  => 'bantuan',
+            'getTambah'  => 'bantuan_tambah',
+            'getHapus'  => 'bantuan_hapus',
         ]);
      Route::controller('app/master/jabatan', 'JabatanController',
         [
             'getIndex'  => 'jabatan',
+            'getTambah'  => 'jabatan_tambah',
         ]);
      Route::controller('app/master/jenis-usaha', 'JenisusahaController',
         [

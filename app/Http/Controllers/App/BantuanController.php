@@ -21,4 +21,22 @@ class BantuanController extends Controller
         return view('app.master.bantuan', $data);
     }
 
+    public function getTambah(Request $request)
+    {
+        //  $data = $request->only(['nama', 'jenis']);
+        // Bantuan::create($data);
+
+        $data['bantuan'] = Bantuan::paginate(10);
+        $dt = new Bantuan;
+        $dt->nama = $request->nama;
+        $dt->save();
+        return redirect()->route('bantuan', $data);
+    }
+
+    public function getHapus(Request $r, $id){
+        Bantuan::where('id', $id)->delete();
+        $r->session()->flash('success', 'Berhasil menghapus data');
+        return redirect()->route('bantuan');
+    }
+
 }

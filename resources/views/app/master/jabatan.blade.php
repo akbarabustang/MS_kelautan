@@ -51,13 +51,14 @@
 							<div class="panel-body">
 								<h5>Jabatan</h5>
 								<p>* Jabatan digunakan pada halaman kelompok.</p>
-								<form class="" role="form">
+								<form class="form-horizontal style-form" method="GET" action="{{ route('jabatan_tambah') }}">
+                				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 									<div class="form-group form-group-default required">
 										<label>Nama Jabatan</label>
-										<input type="text" class="form-control" required>
+										<input type="text" name="nama" class="form-control" required>
 									</div>
 									<div class="form-group">
-										<button class="btn btn-primary btn-cons">Tambah</button>
+										<button type="submit" class="btn btn-primary btn-cons">Tambah</button>
 									</div>
 								</form>
 							</div>
