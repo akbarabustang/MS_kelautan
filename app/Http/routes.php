@@ -1,9 +1,9 @@
 <?php
 
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('/app/beranda', function () {
     return view('app.beranda.index');
