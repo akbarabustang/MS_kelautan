@@ -51,7 +51,7 @@
 							<div class="panel-body">
 								<h5>Jabatan</h5>
 								<p>* Jabatan digunakan pada halaman kelompok.</p>
-								<form class="form-horizontal style-form" method="GET" action="{{ route('jabatan_tambah') }}">
+								<form class="style-form" method="GET" action="{{ route('jabatan_tambah') }}">
                 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 									<div class="form-group form-group-default required">
 										<label>Nama Jabatan</label>
@@ -144,7 +144,7 @@
 					<p class="no-margin">Data akan dihapus. Apakah Anda yakin?</p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-danger btn-cons pull-left inline" data-dismiss="modal">Ya</button>
+					<button type="button" class="btn btn-danger btn-cons pull-left inline" href="{{ route('bantuan_hapus') }}" data-dismiss="modal">Ya</button>
 					<button type="button" class="btn btn-default btn-cons no-margin pull-left inline" data-dismiss="modal">Tidak</button>
 				</div>
 			</div>

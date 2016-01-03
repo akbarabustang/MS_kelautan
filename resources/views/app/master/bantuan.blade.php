@@ -51,7 +51,7 @@
 							<div class="panel-body">
 								<h5>Bantuan</h5>
 								<p>* Bantuan adalah item yang digunakan pada halaman pembudidaya dan nelayan.</p>
-								<form class="form-horizontal style-form" method="GET" action="{{ route('bantuan_tambah') }}">
+								<form class="style-form" method="GET" action="{{ route('bantuan_tambah') }}">
                 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 									<div class="form-group form-group-default required">
 										<label>Nama Bantuan</label>
@@ -85,8 +85,8 @@
 											<tr>
 												<td>
 													<div class="checkbox">
-														<input type="checkbox" value="1" id="checkbox1">
-														<label for="checkbox1" class="m-l-20"></label>
+														<input type="checkbox" value="1" id="checkbox{{ $bantu->id }}">
+														<label for="checkbox{{ $bantu->id }}" class="m-l-20"></label>
 													</div>
 												</td>
 												<td>{{ $bantu->nama }}</td>
