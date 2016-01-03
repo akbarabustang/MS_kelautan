@@ -81,6 +81,7 @@
 											</tr>
 										</thead>
 										<tbody>
+											@foreach($bantuan as $bantu)
 											<tr>
 												<td>
 													<div class="checkbox">
@@ -88,17 +89,9 @@
 														<label for="checkbox1" class="m-l-20"></label>
 													</div>
 												</td>
-												<td>Perahu/Kapal</td>
+												<td>{{ $bantu->nama }}</td>
 											</tr>
-											<tr>
-												<td>
-													<div class="checkbox">
-														<input type="checkbox" value="2" id="checkbox2">
-														<label for="checkbox2" class="m-l-20"></label>
-													</div>
-												</td>
-												<td>Alat Tangkap</td>
-											</tr>
+											@endforeach
 										</tbody>
 									</table>
 								</div>

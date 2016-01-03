@@ -25,6 +25,8 @@ Route::get('/app/master/bantuan', function () {
     return view('app.master.bantuan');
 });
 
+
+
 Route::get('/app/master/jabatan', function () {
     return view('app.master.jabatan');
 });
@@ -45,8 +47,16 @@ Route::get('/app/login', function () {
     return view('app.login.index');
 });
 
-Route::group(['middleware' => ['web']], function () {
-    //
+// App
+Route::group(['namespace' => 'App' ], function () {
+    Route::controller('app/master/bantuan', 'BantuanController',
+        [
+            'getIndex'  => 'bantuan',
+        ]);
+     Route::controller('app/master/jabatan', 'JabatanController',
+        [
+            'getIndex'  => 'jabatan',
+        ]);
 });
 
 

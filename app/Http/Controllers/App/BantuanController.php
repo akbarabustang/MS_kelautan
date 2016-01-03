@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\App;
 
 use Illuminate\Http\Request;
 
@@ -17,25 +17,8 @@ class BantuanController extends Controller
      */
      public function getIndex()
     {
-        $data['bantuan'] = Bantuan::All();
+        $data['bantuan'] = Bantuan::paginate(10);
         return view('app.master.bantuan', $data);
     }
 
-    public function getTambah(Request $request)
-    {
-         $data = $request->only(['nama']);
-        Bantuan::create($data);
-
-        // $data['bantuan'] = Bantuan::paginate(20);
-        // $dt = new Bantuan;
-        // $dt->nama = $request->nama;
-        // $dt->save();
-        // return redirect()->route('master', $data);
-    }
-
-    public function getHapus(Request $r, $id){
-        Bantuan::where('id', $id)->delete();
-        $r->session()->flash('success', 'Berhasil menghapus data');
-        return redirect()->route('master');
-    }
 }

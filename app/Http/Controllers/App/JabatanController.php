@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\App;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Jabatan;
 
 class JabatanController extends Controller
 {
@@ -14,9 +15,9 @@ class JabatanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function getIndex()
     {
-        $data['jabatan'] = Jabatan::all();
+        $data['jabatan'] = Jabatan::paginate(10);
         return view ('app.master.jabatan',$data);
     }
 
