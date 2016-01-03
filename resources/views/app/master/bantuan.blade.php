@@ -20,7 +20,7 @@
 								<a href="#">Master</a>
 							</li>
 							<li>
-								<a href="#" class="active">Sarana Pembudidaya</a>
+								<a href="#" class="active">Bantuan</a>
 							</li>
 						</ul>
 					</div>
@@ -43,11 +43,11 @@
 								</div>
 							</div>
 							<div class="panel-body">
-								<h5>Sarana Pembudidaya</h5>
-								<p>* Sarana Pembudidaya adalah item yang digunakan pada halaman pembudidaya.</p>
+								<h5>Bantuan</h5>
+								<p>* Bantuan adalah item yang digunakan pada halaman pembudidaya dan nelayan.</p>
 								<form class="" role="form">
 									<div class="form-group form-group-default required">
-										<label>Nama Sarana</label>
+										<label>Nama Bantuan</label>
 										<input type="email" class="form-control" required>
 									</div>
 									<div class="form-group">
