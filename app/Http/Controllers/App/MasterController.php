@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Bantuan, App\JenisUsaha, App\Sarana;
 
 class MasterController extends Controller
 {
@@ -14,74 +15,32 @@ class MasterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+     public function getIndex()
     {
-        return view('app.master', compact('master'));
+        $data['bantuan'] = Bantuan::paginate(20);
+        $data['jenisusaha'] = JenisUsaha::paginate(20);
+        $data['kepemilikansarana'] = KepemilikanSarana::where('parent_id', 0)->paginate(20);
+        return view('admin.master-data', $data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function getTambah(Request $request)
     {
-        //
+        //  $data = $request->only(['nama', 'jenis']);
+        // Bantuan::create($data);
+
+        $data['bantuan'] = Bantuan::paginate(20);
+        $data['jenisusaha'] = JenisUsaha::paginate(20);
+        $data['kepemilikansarana'] = KepemilikanSarana::where('parent_id', 0)->paginate(20);
+        $dt = new Bantuan;
+        $dt->nama = $request->nama;
+        $dt->jenis = $request->jenis;
+        $dt->save();
+        return redirect()->route('master', $data);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function getHapus(Request $r, $id){
+        Bantuan::where('id', $id)->delete();
+        $r->session()->flash('success', 'Berhasil menghapus data');
+        return redirect()->route('master');
     }
 }
