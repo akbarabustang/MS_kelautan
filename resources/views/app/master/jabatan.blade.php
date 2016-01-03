@@ -85,7 +85,7 @@
 											<tr>
 												<td>
 													<div class="checkbox">
-														<input type="checkbox" value="1" id="checkbox1">
+														<input type="checkbox" value="1" id="checkbox{{ $jb->id }}">
 														<label for="checkbox1" class="m-l-20"></label>
 													</div>
 												</td>
