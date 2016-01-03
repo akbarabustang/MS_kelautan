@@ -1,14 +1,24 @@
 <!DOCTYPE html>
+
 <html>
-<head>
-	<title>tes</title>
-	@include('partials/meta')
-</head>
-<body class="fixed-header dashboard">
-	@include('partials/header')
 
-	@yield('konten')
+	<head>
 
-	@include('partials/footer')
-</body>
+		<title>@yield('title')</title>
+
+		@include('app/layout/partials/meta')
+
+	</head>
+
+	<body class="fixed-header dashboard">
+
+		@include('app/layout/partials/header')
+
+		@yield('konten')
+
+		@include('app/layout/partials/footer')
+
+		@yield('registerscript')
+	</body>
+
 </html>

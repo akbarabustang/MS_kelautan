@@ -17790,5 +17790,4 @@ if("undefined"!=typeof e){var target=$(e.target);if(target.parent(".page-sidebar
         e.stopPropagation();
     })
     
-})(window.jQuery);;// Menu
-$(".menu-items > li.active > .icon-thumbnail").addClass("btn-success");
+})(window.jQuery);;

@@ -5,21 +5,21 @@
 			<div class="sidebar-overlay-slide from-top" id="appMenu">
 				<div class="row">
 					<div class="col-xs-6 no-padding">
-						<a href="#" class="p-l-40"><img src="assets/img/demo/social_app.svg" alt="socail">
+						<a href="#" class="p-l-40"><img src="{{ url('resources/assets/app/img/demo/social_app.svg') }}" alt="socail">
 						</a>
 					</div>
 					<div class="col-xs-6 no-padding">
-						<a href="#" class="p-l-10"><img src="assets/img/demo/email_app.svg" alt="socail">
+						<a href="#" class="p-l-10"><img src="{{ url('resources/assets/app/img/demo/email_app.svg') }}" alt="socail">
 						</a>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-xs-6 m-t-20 no-padding">
-						<a href="#" class="p-l-40"><img src="assets/img/demo/calendar_app.svg" alt="socail">
+						<a href="#" class="p-l-40"><img src="{{ url('resources/assets/app/img/demo/calendar_app.svg') }}" alt="socail">
 						</a>
 					</div>
 					<div class="col-xs-6 m-t-20 no-padding">
-						<a href="#" class="p-l-10"><img src="assets/img/demo/add_more.svg" alt="socail">
+						<a href="#" class="p-l-10"><img src="{{ url('resources/assets/app/img/demo/add_more.svg') }}" alt="socail">
 						</a>
 					</div>
 				</div>
@@ -28,7 +28,7 @@
 
 			<!-- BEGIN SIDEBAR MENU HEADER-->
 			<div class="sidebar-header">
-				<a href="/"><img src="assets/img/logo_white.png" alt="logo" class="brand" data-src="assets/img/logo_white.png" data-src-retina="assets/img/logo_white_2x.png" height="32"></a>
+				<a href="/"><img src="{{ url('resources/assets/app/img/logo_white.png') }}" alt="logo" class="brand" data-src="{{ url('resources/assets/app/img/logo_white.png') }}" data-src-retina="{{ url('resources/assets/app/img/logo_white_2x.png') }}" height="32"></a>
 				<div class="sidebar-header-controls">
 					<button type="button" class="btn btn-xs sidebar-slide-toggle btn-link m-l-20" data-pages-toggle="#appMenu"><i class="fa fa-angle-down fs-16"></i></button>
 					<button type="button" class="btn btn-link visible-lg-inline" data-toggle-pin="sidebar"><i class="fa fs-12"></i></button>
@@ -136,7 +136,7 @@
 		<div class=" pull-left sm-table">
 			<div class="header-inner">
 				<div class="brand inline m-l-25">
-					<a href="/"><img src="assets/img/logo.png" alt="logo" data-src="assets/img/logo.png" data-src-retina="assets/img/logo_2x.png" height="32"></a>
+					<a href="/"><img src="{{ url('resources/assets/app/img/logo.png') }}" alt="logo" data-src="{{ url('resources/assets/app/img/logo.png') }}" data-src-retina="{{ url('resources/assets/app/img/logo_2x.png') }}" height="32"></a>
 				</div>
 
 				<!-- START NOTIFICATION LIST -->
@@ -238,7 +238,7 @@
 										<div class="notification-item unread clearfix">
 											<div class="heading">
 												<div class="thumbnail-wrapper d24 circular b-white m-r-5 b-a b-white m-t-10 m-r-10">
-													<img width="30" height="30" data-src-retina="assets/img/profiles/1x.jpg" data-src="assets/img/profiles/1.jpg" alt="" src="assets/img/profiles/1.jpg">
+													<img width="30" height="30" data-src-retina="{{ url('resources/assets/app/img/profiles/1x.jpg') }}" data-src="{{ url('resources/assets/app/img/profiles/1.jpg') }}" alt="" src="{{ url('resources/assets/app/img/profiles/1.jpg') }}">
 												</div>
 												<a href="#" class="text-complete">
 													<span class="bold">Revox Design Labs</span>
@@ -298,7 +298,7 @@
 				<div class="dropdown pull-right">
 					<button class="profile-dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<span class="thumbnail-wrapper d32 circular inline m-t-5">
-							<img src="assets/img/profiles/avatar.jpg" alt="" data-src="assets/img/profiles/avatar.jpg" data-src-retina="assets/img/profiles/avatar_small2x.jpg" width="32" height="32">
+							<img src="{{ url('resources/assets/app/img/profiles/avatar.jpg') }}" alt="" data-src="{{ url('resources/assets/app/img/profiles/avatar.jpg') }}" data-src-retina="{{ url('resources/assets/app/img/profiles/avatar_small2x.jpg') }}" width="32" height="32">
 						</span>
 					</button>
 					<ul class="dropdown-menu profile-dropdown" role="menu">

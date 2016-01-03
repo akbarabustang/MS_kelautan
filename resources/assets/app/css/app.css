@@ -26921,3 +26921,8 @@ body.overflow-hidden {
   padding: 15px !important; }
   .table td .checkbox {
     margin: 0 !important; }
+
+.menu-items > li.active > .icon-thumbnail {
+  color: #fff;
+  background-color: #10cfbd;
+  border-color: #10cfbd; }
