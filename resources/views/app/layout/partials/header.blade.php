@@ -28,7 +28,7 @@
 
 			<!-- BEGIN SIDEBAR MENU HEADER-->
 			<div class="sidebar-header">
-				<a href="/"><img src="{{ url('resources/assets/app/img/logo_white.png') }}" alt="logo" class="brand" data-src="{{ url('resources/assets/app/img/logo_white.png') }}" data-src-retina="{{ url('resources/assets/app/img/logo_white_2x.png') }}" height="32"></a>
+				<a href="/app/"><img src="{{ url('resources/assets/app/img/logo_white.png') }}" alt="logo" class="brand" data-src="{{ url('resources/assets/app/img/logo_white.png') }}" data-src-retina="{{ url('resources/assets/app/img/logo_white_2x.png') }}" height="32"></a>
 				<div class="sidebar-header-controls">
 					<button type="button" class="btn btn-xs sidebar-slide-toggle btn-link m-l-20" data-pages-toggle="#appMenu"><i class="fa fa-angle-down fs-16"></i></button>
 					<button type="button" class="btn btn-link visible-lg-inline" data-toggle-pin="sidebar"><i class="fa fs-12"></i></button>
@@ -41,23 +41,23 @@
 				<!-- BEGIN SIDEBAR MENU ITEMS-->
 				<ul class="menu-items">
 					<li class="m-t-30 link-home">
-						<a href="/"><span class="title">Beranda</span></a>
+						<a href="/app"><span class="title">Beranda</span></a>
 						<span class="icon-thumbnail"><i class="pg-home"></i></span>
 					</li>
 					<li class="link-pembudidaya">
-						<a href="/pembudidaya"><span class="title">Pembudidaya</span></a>
+						<a href="/app/pembudidaya"><span class="title">Pembudidaya</span></a>
 						<span class="icon-thumbnail">P</span>
 					</li>
 					<li class="link-nelayan">
-						<a href="/nelayan"><span class="title">Nelayan</span></a>
+						<a href="/app/nelayan"><span class="title">Nelayan</span></a>
 						<span class="icon-thumbnail">N</span>
 					</li>
 					<li class="link-pengolah">
-						<a href="/pengolah"><span class="title">Pengolah</span></a>
+						<a href="/app/pengolah"><span class="title">Pengolah</span></a>
 						<span class="icon-thumbnail">Pl</span>
 					</li>
 					<li class="link-kelompok">
-						<a href="/kelompok"><span class="title">Kelompok</span></a>
+						<a href="/app/kelompok"><span class="title">Kelompok</span></a>
 						<span class="icon-thumbnail">K</span>
 					</li>
 					<li class="link-master">
@@ -66,25 +66,25 @@
 						<span class="icon-thumbnail"><i class="fs-14 pg-cupboard"></i></span>
 						<ul class="sub-menu">
 							<li class="sub-bantuan">
-								<a href="/master/bantuan">Bantuan</a>
+								<a href="/app/master/bantuan">Bantuan</a>
 								<span class="icon-thumbnail">Bn</span>
 							</li>
 							<li class="sub-sarana">
-								<a href="/master/sarana-pembudidaya">Sarana Pembudidaya</a>
+								<a href="/app/master/sarana-pembudidaya">Sarana Pembudidaya</a>
 								<span class="icon-thumbnail">SP</span>
 							</li>
 							<li class="sub-jenis">
-								<a href="/master/jenis-usaha">Jenis Usaha</a>
+								<a href="/app/master/jenis-usaha">Jenis Usaha</a>
 								<span class="icon-thumbnail">JU</span>
 							</li>
 							<li class="sub-jabatan">
-								<a href="/master/jabatan">Jabatan</a>
+								<a href="/app/master/jabatan">Jabatan</a>
 								<span class="icon-thumbnail">J</span>
 							</li>
 						</ul>
 					</li>
 					<li class="link-pengaturan">
-						<a href="/pengaturan"><span class="title">Pengaturan</span></a>
+						<a href="/app/pengaturan"><span class="title">Pengaturan</span></a>
 						<span class="icon-thumbnail"><i class="fa fa-cog"></i></span>
 					</li>
 				</ul>
@@ -136,7 +136,7 @@
 		<div class=" pull-left sm-table">
 			<div class="header-inner">
 				<div class="brand inline m-l-25">
-					<a href="/"><img src="{{ url('resources/assets/app/img/logo.png') }}" alt="logo" data-src="{{ url('resources/assets/app/img/logo.png') }}" data-src-retina="{{ url('resources/assets/app/img/logo_2x.png') }}" height="32"></a>
+					<a href="/app/"><img src="{{ url('resources/assets/app/img/logo.png') }}" alt="logo" data-src="{{ url('resources/assets/app/img/logo.png') }}" data-src-retina="{{ url('resources/assets/app/img/logo_2x.png') }}" height="32"></a>
 				</div>
 
 				<!-- START NOTIFICATION LIST -->
