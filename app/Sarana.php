@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sarana extends Model
 {
-    protected $table = "app_bantuan";
+    protected $table = "app_sarana";
     
     public $timestamps = false;
 }
