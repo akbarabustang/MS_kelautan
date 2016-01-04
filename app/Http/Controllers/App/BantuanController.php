@@ -31,7 +31,12 @@ class BantuanController extends Controller
     }
 
     public function getHapus($id){
-        Bantuan::where('id', $id)->delete();
+
+        $val = explode(",", $id);
+
+        foreach ($val as $value) {           
+            Bantuan::where('id', $id)->delete();
+        }
         return redirect()->route('bantuan');
     }
 
