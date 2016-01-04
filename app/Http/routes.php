@@ -59,10 +59,12 @@ Route::group(['namespace' => 'App' ], function () {
         [
             'getIndex'  => 'jabatan',
             'getTambah'  => 'jabatan_tambah',
+            'getHapus'  => 'jabatan_hapus',
         ]);
-     Route::controller('app/master/jenis-usaha', 'JenisusahaController',
+     Route::controller('app/master/usaha', 'UsahaController',
         [
-            'getIndex'  => 'jenis-usaha',
+            'getIndex'  => 'usaha',
+            'getTambah'  => 'usaha_tambah',
         ]);
 });
 

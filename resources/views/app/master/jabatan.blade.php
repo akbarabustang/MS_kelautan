@@ -75,7 +75,7 @@
 										<thead>
 											<tr>
 												<th width="70">
-													<button class="btn btn-check" data-toggle="modal" data-target="#modal-hapus" disabled><i class="pg-trash"></i></button>
+													<button class="btn btn-check" data-toggle="modal" data-target="#modal-hapus" disabled id="hapus"><i class="pg-trash"></i></button>
 												</th>
 												<th>Jabatan</th>
 											</tr>
@@ -85,7 +85,7 @@
 											<tr>
 												<td>
 													<div class="checkbox">
-														<input type="checkbox" value="{{ $jb->id }}" id="checkbox{{ $jb->id }}">
+														<input type="checkbox" class="pilih" value="{{ $jb->id }}" id="checkbox{{ $jb->id }}">
 														<label for="checkbox{{ $jb->id }}" class="m-l-20"></label>
 													</div>
 												</td>
@@ -144,7 +144,7 @@
 					<p class="no-margin">Data akan dihapus. Apakah Anda yakin?</p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-danger btn-cons pull-left inline" href="{{ route('bantuan_hapus') }}" data-dismiss="modal">Ya</button>
+					<a class="btn btn-danger btn-hapus btn-cons pull-left inline">Ya</a>
 					<button type="button" class="btn btn-default btn-cons no-margin pull-left inline" data-dismiss="modal">Tidak</button>
 				</div>
 			</div>
@@ -162,5 +162,26 @@
 	<script>
 		$(".menu-items .link-master").addClass("active open");
 		$(".menu-items .link-master .sub-jabatan").addClass("active");
+
+		$(function(){
+
+			$("#hapus").click(function(){
+
+				if($(".pilih:checked").length) {
+		          var id = "";
+		          $(".pilih:checked").each(function() {
+		            id += $(this).val() + ",";
+		          });
+		          id =  id.slice(0,-1);
+		        }
+		        else {
+				  return false;
+		        }
+
+		        $(".btn-hapus").attr('href',"{{ route('jabatan_hapus') }}/"+id);
+
+			});
+		});
+
 	</script>
 @endsection

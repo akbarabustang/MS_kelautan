@@ -30,9 +30,8 @@ class BantuanController extends Controller
         return redirect()->route('bantuan', $data);
     }
 
-    public function getHapus(Request $r, $id){
+    public function getHapus($id){
         Bantuan::where('id', $id)->delete();
-        $r->session()->flash('success', 'Berhasil menghapus data');
         return redirect()->route('bantuan');
     }
 

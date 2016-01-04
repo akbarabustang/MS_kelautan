@@ -143,7 +143,7 @@
 					<p class="no-margin">Data akan dihapus. Apakah Anda yakin?</p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-danger btn-cons pull-left inline" href="{{ route('bantuan_hapus') }}" data-dismiss="modal">Ya</button>
+					<a class="btn btn-danger btn-cons pull-left inline" href="{{ route('bantuan_hapus') }}/{{ $bantu->id }}">Ya</a>
 					<button type="button" class="btn btn-default btn-cons no-margin pull-left inline" data-dismiss="modal">Tidak</button>
 				</div>
 			</div>

@@ -30,10 +30,14 @@ class JabatanController extends Controller
         return redirect()->route('jabatan', $data);
     }
 
-    public function getHapus(Request $r, $id){
-        Bantuan::where('id', $id)->delete();
-        $r->session()->flash('success', 'Berhasil menghapus data');
-        return redirect()->route('bantuan');
+    public function getHapus($id)
+    {
+        $val = explode(",", $id);
+
+        foreach ($val as $value) {
+            Jabatan::where('id', $value)->delete();            
+        }
+        return redirect()->route('jabatan');
     }
 
     

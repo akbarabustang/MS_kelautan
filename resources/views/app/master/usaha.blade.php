@@ -51,10 +51,11 @@
 							<div class="panel-body">
 								<h5>Jenis Usaha Budidaya</h5>
 								<p>* Jenis Usaha Budidaya digunakan pada halaman pembudidaya dan nelayan.</p>
-								<form class="" role="form">
+								<form class="style-form" method="GET" action="{{ route('usaha_tambah') }}">
+                				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 									<div class="form-group form-group-default required">
 										<label>Jenis Usaha Budidaya</label>
-										<select class="full-width" data-init-plugin="select2">
+										<select class="full-width" data-init-plugin="select2" name="id_usaha">
 											<option value="1">Budidaya Air Laut</option>
 											<option value="2">Budidaya Air Tawar</option>
 											<option value="3">Budidaya Air Payau</option>
@@ -62,7 +63,7 @@
 									</div>
 									<div class="form-group form-group-default required">
 										<label>Nama Usaha</label>
-										<input type="text" class="form-control" required>
+										<input type="text" name="nama" class="form-control" required>
 									</div>
 									<div class="form-group">
 										<button class="btn btn-primary btn-cons">Tambah</button>
@@ -89,7 +90,7 @@
 											</tr>
 										</thead>
 										<tbody>
-											@foreach($jenisusaha as $js)
+											@foreach($usaha as $us)
 											<tr>
 												<td>
 													<div class="checkbox">
@@ -97,8 +98,8 @@
 														<label for="checkbox1" class="m-l-20"></label>
 													</div>
 												</td>
-												<td>{{ $js->id_sub_usaha }}</td>
-												<td>{{ $js->id_user }}</td>
+												<td>{{ $us->usaha->nama }}</td>
+												<td>{{ $us->nama }}</td>
 											</tr>
 											@endforeach
 										</tbody>
