@@ -52,7 +52,14 @@
 								<h5>Bantuan</h5>
 								<p>* Bantuan adalah item yang digunakan pada halaman pembudidaya dan nelayan.</p>
 								<form class="style-form" method="GET" action="{{ route('bantuan_tambah') }}">
-                				<input type="hidden" name="_token" value="{{ csrf_token() }}">
+                					<input type="hidden" name="_token" value="{{ csrf_token() }}">
+                					<div class="form-group form-group-default required">
+										<label>Bantuan Untuk:</label>
+										<select class="full-width" data-init-plugin="select2">
+											<option value="nelayan">Nelayan</option>
+											<option value="pembudidaya">Pembudidaya</option>
+										</select>
+									</div>
 									<div class="form-group form-group-default required">
 										<label>Nama Bantuan</label>
 										<input type="text" name="nama" class="form-control" required>
@@ -78,6 +85,7 @@
 													<button class="btn btn-check" data-toggle="modal" data-target="#modal-hapus" disabled id="hapus"><i class="pg-trash"></i></button>
 												</th>
 												<th>Nama Bantuan</th>
+												<th>Bantuan Untuk:</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -90,6 +98,7 @@
 													</div>
 												</td>
 												<td>{{ $bantu->nama }}</td>
+												<td>Nelayan</td>
 											</tr>
 											@endforeach
 										</tbody>
