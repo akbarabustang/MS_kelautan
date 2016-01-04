@@ -23,9 +23,6 @@ class BantuanController extends Controller
 
     public function getTambah(Request $request)
     {
-        //  $data = $request->only(['nama', 'jenis']);
-        // Bantuan::create($data);
-
         $data['bantuan'] = Bantuan::paginate(10);
         $dt = new Bantuan;
         $dt->nama = $request->nama;
