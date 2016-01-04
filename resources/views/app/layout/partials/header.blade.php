@@ -75,7 +75,7 @@
 								<span class="icon-thumbnail">SP</span>
 							</li>
 							<li class="sub-jenis">
-								<a href="/app/master/jenis-usaha">Jenis Usaha</a>
+								<a href="/app/master/usaha">Usaha</a>
 								<span class="icon-thumbnail">JU</span>
 							</li>
 							<li class="sub-jabatan">
