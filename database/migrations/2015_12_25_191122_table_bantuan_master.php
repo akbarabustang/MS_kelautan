@@ -27,6 +27,6 @@ class TableBantuanMaster extends Migration
      */
     public function down()
     {
-        Schema::drop('bantuan_master');
+        Schema::drop('app_bantuan_master');
     }
 }
