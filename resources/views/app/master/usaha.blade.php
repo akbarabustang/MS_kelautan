@@ -98,7 +98,7 @@
 														<label for="checkbox{{ $us->id }}" class="m-l-20"></label>
 													</div>
 												</td>
-												<td>{{ $us->usaha->nama }}</td>
+												<td>{{ $us->jenis }}</td>
 												<td>{{ $us->nama }}</td>
 											</tr>
 											@endforeach

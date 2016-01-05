@@ -15,7 +15,7 @@ class TabelSubUsaha extends Migration
         Schema::create('app_sub_usaha', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama');
-            $table->integer('id_usaha');
+            $table->string('jenis');
         });
     }
 

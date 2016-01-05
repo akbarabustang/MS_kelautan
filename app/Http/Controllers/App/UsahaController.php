@@ -26,7 +26,18 @@ class UsahaController extends Controller
         $data['usaha'] = SubUsaha::paginate(10);
         $dt = new SubUsaha;
         $dt->nama = $request->nama;
+        $dt->id_usaha = $request->id_usaha;
         $dt->save();
         return redirect()->route('usaha', $data);
+    }
+
+    public function getHapus($id){
+
+        $val = explode(",", $id);
+
+        foreach ($val as $value) {
+            Bantuan::where('id', $value)->delete();            
+        }
+        return redirect()->route('usaha');
     }
 }

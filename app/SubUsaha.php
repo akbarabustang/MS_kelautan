@@ -10,8 +10,4 @@ class SubUsaha extends Model
     
     public $timestamps = false;
 
-    public function usaha()
-    {
-    	return $this->belongsTo('App\Usaha','id');
-    }
 }
