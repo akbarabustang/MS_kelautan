@@ -71,7 +71,7 @@
 								<span class="icon-thumbnail">Bn</span>
 							</li>
 							<li class="sub-sarana">
-								<a href="/app/master/sarana-pembudidaya">Sarana Pembudidaya</a>
+								<a href="/app/master/sarana">Sarana Pembudidaya</a>
 								<span class="icon-thumbnail">SP</span>
 							</li>
 							<li class="sub-jenis">
