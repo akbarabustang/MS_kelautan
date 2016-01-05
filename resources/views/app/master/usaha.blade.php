@@ -170,6 +170,25 @@
 @section('registerscript')
 	<script>
 		$(".menu-items .link-master").addClass("active open");
-		$(".menu-items .link-master .sub-jenis").addClass("active");
+		$(".menu-items .link-master .sub-usaha").addClass("active");
+		$(function(){
+
+			$("#hapus").click(function(){
+
+				if($(".pilih:checked").length) {
+					var id = "";
+					$(".pilih:checked").each(function() {
+						id += $(this).val() + ",";
+					});
+					id =  id.slice(0,-1);
+				}
+				else {
+					return false;
+				}
+
+				$(".btn-hapus").attr('href',"{{ route('usaha_hapus') }}/"+id);
+
+			});
+		})();
 	</script>
 @endsection

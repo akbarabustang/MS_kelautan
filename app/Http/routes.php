@@ -75,7 +75,8 @@ Route::group(['middleware' => 'MustLogin', 'namespace' => 'App' ], function () {
      Route::controller('app/master/usaha', 'UsahaController',
         [
             'getIndex'  => 'usaha',
-            'getTambah'  => 'usaha_tambah',
+            'getTambah' => 'usaha_tambah',
+            'getHapus'  => 'usaha_hapus',
         ]);
 });
 
