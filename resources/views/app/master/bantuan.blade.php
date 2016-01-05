@@ -54,7 +54,7 @@
 								<form class="style-form" method="GET" action="{{ route('bantuan_tambah') }}">
                 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
                 					<div class="form-group form-group-default required">
-										<label>Bantuan Untuk:</label>
+										<label>Bidang Usaha</label>
 										<select class="full-width" data-init-plugin="select2">
 											<option value="nelayan">Nelayan</option>
 											<option value="pembudidaya">Pembudidaya</option>
@@ -85,7 +85,7 @@
 													<button class="btn btn-check" data-toggle="modal" data-target="#modal-hapus" disabled id="hapus"><i class="pg-trash"></i></button>
 												</th>
 												<th>Nama Bantuan</th>
-												<th>Bantuan Untuk:</th>
+												<th>Bidang Usaha</th>
 											</tr>
 										</thead>
 										<tbody>
