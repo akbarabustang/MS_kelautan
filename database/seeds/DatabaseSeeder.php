@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
         $this->call('BantuanSeeder');
         $this->call('KelompokSeeder');
         $this->call('SubUsahaSeeder');
+        $this->call('SubSaranaSeeder');
     }
 }
 
@@ -137,6 +138,23 @@ class BantuanMasterSeeder extends Seeder
       );
 
       DB::table('app_bantuan_master')->insert($data);
+
+  }
+}
+
+class SubSaranaSeeder extends Seeder
+{
+
+  public function run() {
+
+  App\SubSarana::truncate();
+
+    $data = array(
+        array('nama' => 'Para-para', 'jenis' => 'Budidaya Air Laut'),
+        array('nama' => 'Pompa', 'jenis' => 'Budidaya Air Tawar'),
+      );
+
+      DB::table('app_sub_sarana')->insert($data);
 
   }
 }
