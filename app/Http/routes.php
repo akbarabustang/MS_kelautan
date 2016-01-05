@@ -52,8 +52,8 @@ Route::group(['middleware' => 'MustLogin', 'namespace' => 'App' ], function () {
         return view('app.master.usaha');
     });
 
-    Route::get('/app/master/sarana-pembudidaya', function () {
-        return view('app.master.sarana-pembudidaya');
+    Route::get('/app/master/sarana', function () {
+        return view('app.master.sarana');
     });
 
     Route::get('/app/pengaturan', function () {

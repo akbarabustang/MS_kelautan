@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class PembudidayaController extends Controller
+class SaranaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class PembudidayaController extends Controller
      */
     public function index()
     {
-        return view('app.pembudidaya', compact('pembudidaya'));
+        return view('app.master.sarana', compact('sarana'));
     }
 
     /**
