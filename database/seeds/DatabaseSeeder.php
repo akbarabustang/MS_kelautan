@@ -187,8 +187,8 @@ class JabatanSeeder extends Seeder
   App\Jabatan::truncate();
 
     $data = array(
-        array('nama' => 'Ketua Kelompok Tani'),
-        array('nama' => 'Wakil Kelompok Tani'),
+        array('nama' => 'Ketua Kelompok Nelayan'),
+        array('nama' => 'Wakil Kelompok Nelayan'),
       );
 
       DB::table('app_jabatan')->insert($data);
