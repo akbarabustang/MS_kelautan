@@ -52,7 +52,7 @@
 								<h5>Jabatan</h5>
 								<p>* Jabatan digunakan pada halaman kelompok.</p>
 								<form class="style-form" method="GET" action="{{ route('jabatan_tambah') }}">
-                				<input type="hidden" name="_token" value="{{ csrf_token() }}">
+								<input type="hidden" name="_token" value="{{ csrf_token() }}">
 									<div class="form-group form-group-default required">
 										<label>Nama Jabatan</label>
 										<input type="text" name="nama" class="form-control" required>
@@ -168,20 +168,20 @@
 			$("#hapus").click(function(){
 
 				if($(".pilih:checked").length) {
-		          var id = "";
-		          $(".pilih:checked").each(function() {
-		            id += $(this).val() + ",";
-		          });
-		          id =  id.slice(0,-1);
-		        }
-		        else {
-				  return false;
-		        }
+					var id = "";
+					$(".pilih:checked").each(function() {
+						id += $(this).val() + ",";
+					});
+					id =  id.slice(0,-1);
+				}
+				else {
+					return false;
+				}
 
-		        $(".btn-hapus").attr('href',"{{ route('jabatan_hapus') }}/"+id);
+				$(".btn-hapus").attr('href',"{{ route('jabatan_hapus') }}/"+id);
 
 			});
-		});
+		})();
 
 	</script>
 @endsection

@@ -55,9 +55,9 @@
                 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
                 					<div class="form-group form-group-default required">
 										<label>Bidang Usaha</label>
-										<select class="full-width" data-init-plugin="select2">
-											<option value="nelayan">Nelayan</option>
-											<option value="pembudidaya">Pembudidaya</option>
+										<select class="full-width" data-init-plugin="select2" name="jenis">
+											<option value="Nelayan">Nelayan</option>
+											<option value="Pembudidaya">Pembudidaya</option>
 										</select>
 									</div>
 									<div class="form-group form-group-default required">
@@ -98,7 +98,7 @@
 													</div>
 												</td>
 												<td>{{ $bantu->nama }}</td>
-												<td>Nelayan</td>
+												<td>{{ $bantu->jenis }}</td>
 											</tr>
 											@endforeach
 										</tbody>
@@ -176,19 +176,19 @@
 			$("#hapus").click(function(){
 
 				if($(".pilih:checked").length) {
-		          var id = "";
-		          $(".pilih:checked").each(function() {
-		            id += $(this).val() + ",";
-		          });
-		          id =  id.slice(0,-1);
-		        }
-		        else {
-				  return false;
-		        }
+					var id = "";
+					$(".pilih:checked").each(function() {
+						id += $(this).val() + ",";
+					});
+					id =  id.slice(0,-1);
+				}
+				else {
+					return false;
+				}
 
-		        $(".btn-hapus").attr('href',"{{ route('bantuan_hapus') }}/"+id);
+				$(".btn-hapus").attr('href',"{{ route('bantuan_hapus') }}/"+id);
 
 			});
-		});
+		})();
 	</script>
 @endsection

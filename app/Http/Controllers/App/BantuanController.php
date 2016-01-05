@@ -26,6 +26,7 @@ class BantuanController extends Controller
         $data['bantuan'] = Bantuan::paginate(10);
         $dt = new Bantuan;
         $dt->nama = $request->nama;
+        $dt->jenis = $request->jenis;
         $dt->save();
         return redirect()->route('bantuan', $data);
     }
@@ -34,8 +35,8 @@ class BantuanController extends Controller
 
         $val = explode(",", $id);
 
-        foreach ($val as $value) {           
-            Bantuan::where('id', $id)->delete();
+        foreach ($val as $value) {
+            Bantuan::where('id', $value)->delete();            
         }
         return redirect()->route('bantuan');
     }

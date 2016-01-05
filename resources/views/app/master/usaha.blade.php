@@ -83,7 +83,7 @@
 										<thead>
 											<tr>
 												<th width="70">
-													<button class="btn btn-check" data-toggle="modal" data-target="#modal-hapus" disabled><i class="pg-trash"></i></button>
+													<button class="btn btn-check" data-toggle="modal" data-target="#modal-hapus" disabled id="hapus"><i class="pg-trash"></i></button>
 												</th>
 												<th>Jenis Usaha Budidaya</th>
 												<th>Nama Usaha</th>
@@ -94,8 +94,8 @@
 											<tr>
 												<td>
 													<div class="checkbox">
-														<input type="checkbox" value="1" id="checkbox1">
-														<label for="checkbox1" class="m-l-20"></label>
+														<input type="checkbox" class="pilih" value="{{ $us->id }}" id="checkbox{{ $us->id }}">
+														<label for="checkbox{{ $us->id }}" class="m-l-20"></label>
 													</div>
 												</td>
 												<td>{{ $us->usaha->nama }}</td>
@@ -153,7 +153,7 @@
 					<p class="no-margin">Data akan dihapus. Apakah Anda yakin?</p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-danger btn-cons pull-left inline" data-dismiss="modal">Ya</button>
+					<button type="button" class="btn btn-danger btn-hapus btn-cons pull-left inline" data-dismiss="modal">Ya</button>
 					<button type="button" class="btn btn-default btn-cons no-margin pull-left inline" data-dismiss="modal">Tidak</button>
 				</div>
 			</div>
