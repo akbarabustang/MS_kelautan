@@ -52,10 +52,6 @@ Route::group(['middleware' => 'MustLogin', 'namespace' => 'App' ], function () {
         return view('app.master.usaha');
     });
 
-    Route::get('/app/master/sarana', function () {
-        return view('app.master.sarana');
-    });
-
     Route::get('/app/pengaturan', function () {
         return view('app.pengaturan.index');
     });
@@ -66,17 +62,23 @@ Route::group(['middleware' => 'MustLogin', 'namespace' => 'App' ], function () {
             'getTambah'  => 'bantuan_tambah',
             'getHapus'  => 'bantuan_hapus',
         ]);
-     Route::controller('app/master/jabatan', 'JabatanController',
+    Route::controller('app/master/jabatan', 'JabatanController',
         [
             'getIndex'  => 'jabatan',
             'getTambah'  => 'jabatan_tambah',
             'getHapus'  => 'jabatan_hapus',
         ]);
-     Route::controller('app/master/usaha', 'UsahaController',
+    Route::controller('app/master/usaha', 'UsahaController',
         [
             'getIndex'  => 'usaha',
             'getTambah' => 'usaha_tambah',
             'getHapus'  => 'usaha_hapus',
+        ]);
+    Route::controller('app/master/sarana', 'SaranaController',
+        [
+            'getIndex'  => 'sarana',
+            'getTambah' => 'sarana_tambah',
+            'getHapus'  => 'sarana_hapus',
         ]);
 });
 

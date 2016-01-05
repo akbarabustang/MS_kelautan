@@ -153,7 +153,7 @@
 					<p class="no-margin">Data akan dihapus. Apakah Anda yakin?</p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-danger btn-hapus btn-cons pull-left inline" data-dismiss="modal">Ya</button>
+					<a class="btn btn-danger btn-hapus btn-cons pull-left inline">Ya</a>
 					<button type="button" class="btn btn-default btn-cons no-margin pull-left inline" data-dismiss="modal">Tidak</button>
 				</div>
 			</div>
@@ -171,6 +171,7 @@
 	<script>
 		$(".menu-items .link-master").addClass("active open");
 		$(".menu-items .link-master .sub-usaha").addClass("active");
+		
 		$(function(){
 
 			$("#hapus").click(function(){

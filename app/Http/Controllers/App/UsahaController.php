@@ -36,7 +36,7 @@ class UsahaController extends Controller
         $val = explode(",", $id);
 
         foreach ($val as $value) {
-            Usaha::where('id', $value)->delete();            
+            SubUsaha::where('id', $value)->delete();            
         }
         return redirect()->route('usaha');
     }

@@ -51,18 +51,19 @@
 							<div class="panel-body">
 								<h5>Sarana Pembudidaya</h5>
 								<p>* Sarana Pembudidaya adalah item yang digunakan pada halaman pembudidaya dan nelayan.</p>
-								<form class="" role="form">
+								<form class="style-form" method="GET" action="{{ route('sarana_tambah') }}">
+                				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 									<div class="form-group form-group-default required">
 										<label>Jenis Usaha Budidaya</label>
-										<select class="full-width" data-init-plugin="select2">
-											<option value="1">Budidaya Air Laut</option>
-											<option value="2">Budidaya Air Tawar</option>
-											<option value="3">Budidaya Air Payau</option>
+										<select class="full-width" data-init-plugin="select2" name="jenis">
+											<option value="Budidaya Air Laut">Budidaya Air Laut</option>
+											<option value="Budidaya Air Tawar">Budidaya Air Tawar</option>
+											<option value="Budidaya Air Payau">Budidaya Air Payau</option>
 										</select>
 									</div>
 									<div class="form-group form-group-default required">
 										<label>Sarana / Prasarana</label>
-										<input type="text" class="form-control" required>
+										<input type="text" name="nama" class="form-control" required>
 									</div>
 									<div class="form-group">
 										<button class="btn btn-primary btn-cons">Tambah</button>
@@ -82,33 +83,25 @@
 										<thead>
 											<tr>
 												<th width="70">
-													<button class="btn btn-check" data-toggle="modal" data-target="#modal-hapus" disabled><i class="pg-trash"></i></button>
+													<button class="btn btn-check" data-toggle="modal" data-target="#modal-hapus" disabled id="hapus"><i class="pg-trash"></i></button>
 												</th>
 												<th>Jenis Usaha Budidaya</th>
 												<th>Sarana / Prasarana</th>
 											</tr>
 										</thead>
 										<tbody>
+											@foreach($sarana as $sr)
 											<tr>
 												<td>
 													<div class="checkbox">
-														<input type="checkbox" value="1" id="checkbox1">
-														<label for="checkbox1" class="m-l-20"></label>
+														<input type="checkbox" class="pilih" value="{{ $sr->id }}" id="checkbox{{ $sr->id }}">
+														<label for="checkbox{{ $sr->id }}" class="m-l-20"></label>
 													</div>
 												</td>
-												<td>Budidaya Air Laut</td>
-												<td>Para-para</td>
+												<td>{{ $sr->jenis }}</td>
+												<td>{{ $sr->nama }}</td>
 											</tr>
-											<tr>
-												<td>
-													<div class="checkbox">
-														<input type="checkbox" value="2" id="checkbox2">
-														<label for="checkbox2" class="m-l-20"></label>
-													</div>
-												</td>
-												<td>Budidaya Air Laut</td>
-												<td>Perahu</td>
-											</tr>
+											@endforeach
 										</tbody>
 									</table>
 								</div>
@@ -160,7 +153,7 @@
 					<p class="no-margin">Data akan dihapus. Apakah Anda yakin?</p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-danger btn-cons pull-left inline" data-dismiss="modal">Ya</button>
+					<a class="btn btn-danger btn-hapus btn-cons pull-left inline">Ya</a>
 					<button type="button" class="btn btn-default btn-cons no-margin pull-left inline" data-dismiss="modal">Tidak</button>
 				</div>
 			</div>
@@ -178,5 +171,25 @@
 	<script>
 		$(".menu-items .link-master").addClass("active open");
 		$(".menu-items .link-master .sub-sarana").addClass("active");
+
+		$(function(){
+
+			$("#hapus").click(function(){
+
+				if($(".pilih:checked").length) {
+					var id = "";
+					$(".pilih:checked").each(function() {
+						id += $(this).val() + ",";
+					});
+					id =  id.slice(0,-1);
+				}
+				else {
+					return false;
+				}
+
+				$(".btn-hapus").attr('href',"{{ route('sarana_hapus') }}/"+id);
+
+			});
+		})();
 	</script>
 @endsection

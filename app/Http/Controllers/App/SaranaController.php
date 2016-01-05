@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\App;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\SubSarana;
 
 class SaranaController extends Controller
 {
@@ -16,14 +17,14 @@ class SaranaController extends Controller
      */
     public function getIndex()
     {
-        $data['sarana'] = Sarana::paginate(10);
+        $data['sarana'] = SubSarana::paginate(10);
         return view('app.master.sarana', $data);
     }
 
     public function getTambah(Request $request)
     {
-        $data['sarana'] = Sarana::paginate(10);
-        $dt = new Sarana;
+        $data['sarana'] = SubSarana::paginate(10);
+        $dt = new SubSarana;
         $dt->nama = $request->nama;
         $dt->jenis = $request->jenis;
         $dt->save();
@@ -35,7 +36,7 @@ class SaranaController extends Controller
         $val = explode(",", $id);
 
         foreach ($val as $value) {
-            Sarana::where('id', $value)->delete();            
+            SubSarana::where('id', $value)->delete();            
         }
         return redirect()->route('sarana');
     }
