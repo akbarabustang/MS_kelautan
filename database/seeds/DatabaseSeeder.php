@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
         $this->call('KelompokSeeder');
         $this->call('SubUsahaSeeder');
         $this->call('SubSaranaSeeder');
+        $this->call('JabatanSeeder');
     }
 }
 
@@ -174,6 +175,23 @@ class SubUsahaSeeder extends Seeder
       );
 
       DB::table('app_sub_usaha')->insert($data);
+
+  }
+}
+
+class JabatanSeeder extends Seeder
+{
+
+  public function run() {
+
+  App\Jabatan::truncate();
+
+    $data = array(
+        array('nama' => 'Ketua Kelompok Tani'),
+        array('nama' => 'Wakil Kelompok Tani'),
+      );
+
+      DB::table('app_jabatan')->insert($data);
 
   }
 }
