@@ -15,8 +15,7 @@ class TabelSubSarana extends Migration
         Schema::create('app_sub_sarana', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama');
-            $table->integer('id_sarana');
-            $table->string('nilai');
+            $table->string('jenis');
         });
     }
 
