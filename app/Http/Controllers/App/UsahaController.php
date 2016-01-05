@@ -26,7 +26,7 @@ class UsahaController extends Controller
         $data['usaha'] = SubUsaha::paginate(10);
         $dt = new SubUsaha;
         $dt->nama = $request->nama;
-        $dt->id_usaha = $request->id_usaha;
+        $dt->jenis = $request->jenis;
         $dt->save();
         return redirect()->route('usaha', $data);
     }
