@@ -43,7 +43,7 @@ Route::group(['middleware' => 'MustLogin', 'namespace' => 'App' ], function () {
         return view('app.master.bantuan');
     });
 
-    Route::get('/app/kelompok/index', function () {
+    Route::get('/app/kelompok', function () {
         return view('app.kelompok.index');
     });
 
@@ -68,20 +68,20 @@ Route::group(['middleware' => 'MustLogin', 'namespace' => 'App' ], function () {
     Route::controller('app/kelompok/index', 'KelompokController',
         [
             'getIndex'  => 'kelompok',
-            'getTambah'  => 'kelompok_tambah',
+            'getTambah' => 'kelompok_tambah',
             'getHapus'  => 'kelompok_hapus',
         ]);
 
     Route::controller('app/master/bantuan', 'BantuanController',
         [
             'getIndex'  => 'bantuan',
-            'getTambah'  => 'bantuan_tambah',
+            'getTambah' => 'bantuan_tambah',
             'getHapus'  => 'bantuan_hapus',
         ]);
     Route::controller('app/master/jabatan', 'JabatanController',
         [
             'getIndex'  => 'jabatan',
-            'getTambah'  => 'jabatan_tambah',
+            'getTambah' => 'jabatan_tambah',
             'getHapus'  => 'jabatan_hapus',
         ]);
     Route::controller('app/master/usaha', 'UsahaController',
