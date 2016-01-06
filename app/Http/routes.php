@@ -80,7 +80,13 @@ Route::group(['middleware' => 'MustLogin', 'namespace' => 'App' ], function () {
             'getTambah' => 'usaha_tambah',
             'getHapus'  => 'usaha_hapus',
         ]);
-    Route::controller('app/master/sarana', 'SaranaController',
+    Route::controller('app/master/sarana-pembudidaya', 'SaranaPembudidayaController',
+        [
+            'getIndex'  => 'sarana',
+            'getTambah' => 'sarana_tambah',
+            'getHapus'  => 'sarana_hapus',
+        ]);
+    Route::controller('app/master/sarana-nelayan', 'SaranaNelayanController',
         [
             'getIndex'  => 'sarana',
             'getTambah' => 'sarana_tambah',

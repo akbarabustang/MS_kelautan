@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\SubSarana;
 
-class SaranaController extends Controller
+class SaranaNelayanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +18,7 @@ class SaranaController extends Controller
     public function getIndex()
     {
         $data['sarana'] = SubSarana::paginate(10);
-        return view('app.master.sarana', $data);
+        return view('app.master.sarananelayan', $data);
     }
 
     public function getTambah(Request $request)

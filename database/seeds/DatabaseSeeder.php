@@ -151,8 +151,12 @@ class SubSaranaSeeder extends Seeder
   App\SubSarana::truncate();
 
     $data = array(
-        array('nama' => 'Para-para', 'jenis' => 'Budidaya Air Laut'),
-        array('nama' => 'Pompa', 'jenis' => 'Budidaya Air Tawar'),
+        array('jenis' => 'Budidaya Air Laut', 'sub' => 'Para-para', 'tipe' => 'Pembudidaya'),
+        array('jenis' => 'Budidaya Air Laut', 'sub' => 'Perahu', 'tipe' => 'Pembudidaya'),
+        array('jenis' => 'Budidaya Air Tawar', 'sub' => 'Luas Lahan < 1 Ha', 'tipe' => 'Pembudidaya'),
+        array('jenis' => 'Perahu Kapal', 'sub' => '< 5 GT', 'tipe' => 'Nelayan'),
+        array('jenis' => 'Alat Tangkap', 'sub' => 'Pancing', 'tipe' => 'Nelayan'),
+        array('jenis' => 'Mesin', 'sub' => '< 5 PK', 'tipe' => 'Nelayan'),
       );
 
       DB::table('app_sub_sarana')->insert($data);

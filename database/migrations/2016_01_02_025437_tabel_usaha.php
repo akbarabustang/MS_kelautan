@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TabelSubSarana extends Migration
+class TabelSubUsaha extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class TabelSubSarana extends Migration
      */
     public function up()
     {
-        Schema::create('app_sub_sarana', function (Blueprint $table) {
+        Schema::create('app_usaha', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama');
             $table->string('jenis');
@@ -26,6 +26,6 @@ class TabelSubSarana extends Migration
      */
     public function down()
     {
-        Schema::drop('app_sub_sarana');
+        Schema::drop('app_usaha');
     }
 }

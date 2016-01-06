@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TabelSarana extends Migration
+class TabelSubSarana extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,11 @@ class TabelSarana extends Migration
      */
     public function up()
     {
-    
-        Schema::create('app_sarana', function(Blueprint $t)
-        {
-            $t->increments('id')->unsigned();
-            $t->string('nama');
-            $t->enum('jenis', ['Nelayan','Pembudidaya']);
+        Schema::create('app_sarana', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('jenis');
+            $table->string('sub');
+            $table->enum('tipe',['Pembudidaya','Nelayan']);
         });
     }
 

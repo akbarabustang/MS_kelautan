@@ -63,7 +63,7 @@
 									</div>
 									<div class="form-group form-group-default required">
 										<label>Sarana / Prasarana</label>
-										<input type="text" name="nama" class="form-control" required>
+										<input type="text" name="sub" class="form-control" required>
 									</div>
 									<div class="form-group">
 										<button class="btn btn-primary btn-cons">Tambah</button>
@@ -99,7 +99,7 @@
 													</div>
 												</td>
 												<td>{{ $sr->jenis }}</td>
-												<td>{{ $sr->nama }}</td>
+												<td>{{ $sr->sub }}</td>
 											</tr>
 											@endforeach
 										</tbody>
