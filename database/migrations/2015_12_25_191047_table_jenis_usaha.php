@@ -12,7 +12,7 @@ class TableJenisUsaha extends Migration
      */
     public function up()
     {
-        Schema::create('msakti_jenis_usaha', function(Blueprint $t)
+        Schema::create('app_jenis_usaha', function(Blueprint $t)
         {
             $t->integer('id_sub_usaha');
             $t->integer('id_user');
@@ -26,6 +26,6 @@ class TableJenisUsaha extends Migration
      */
     public function down()
     {
-        Schema::drop('jenis_usaha');
+        Schema::drop('app_jenis_usaha');
     }
 }

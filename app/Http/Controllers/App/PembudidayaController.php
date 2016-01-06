@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\App;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\User, App\Kelompok, App\Jabatan;
 
 class PembudidayaController extends Controller
 {
@@ -14,74 +15,49 @@ class PembudidayaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function getIndex()
     {
-        return view('app.pembudidaya', compact('pembudidaya'));
+        $data['pembudidaya'] = User::where('profesi','Pembudidaya')->get();
+        // $data['kelompok'] = Kelompok::where('tipe','Pembudidaya')->get();
+        $data['kelompok'] = Kelompok::all();
+        $data['jabatan'] = Jabatan::all();
+        return view ('app.pembudidaya.index',$data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+     public function getTambah(Request $request)
     {
-        //
+        $data['jabatan'] = Jabatan::paginate(10);
+        $dt = new Jabatan;
+        $dt->nama = $request->nama;
+        $dt->save();
+        return redirect()->route('jabatan', $data);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function postSimpan()
     {
-        //
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function getEdit()
     {
-        //
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function postUpdate()
     {
-        //
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function getHapus(Request $r, $id)
     {
-        //
+        $val = explode(",", $id);
+
+        foreach ($val as $value) {
+            User::where('id', $value)->delete();            
+        }
+        $r->session()->flash('success', 'Data terhapus');
+        return redirect()->route('pembudidaya');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+    
 }

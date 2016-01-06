@@ -12,7 +12,7 @@ class CreateSettingTable extends Migration
      */
     public function up()
     {
-        Schema::create('msakti_setting', function (Blueprint $table) {
+        Schema::create('site_setting', function (Blueprint $table) {
             $table->increments('id');
             $table->string('sitename',100);
             $table->string('description');
@@ -30,6 +30,6 @@ class CreateSettingTable extends Migration
      */
     public function down()
     {
-        Schema::drop('setting');
+        Schema::drop('site_setting');
     }
 }

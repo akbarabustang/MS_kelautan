@@ -16,7 +16,7 @@ class PengaturanController extends Controller
      */
     public function index()
     {
-        return view('app.pengaturan', compact('pengaturan'));
+        return view('app.pengaturan.index', compact('pengaturan'));
     }
 
     /**

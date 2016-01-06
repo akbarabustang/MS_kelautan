@@ -25,6 +25,9 @@ class DatabaseSeeder extends Seeder
         $this->call('BantuanMasterSeeder');
         $this->call('BantuanSeeder');
         $this->call('KelompokSeeder');
+        $this->call('SubUsahaSeeder');
+        $this->call('SubSaranaSeeder');
+        $this->call('JabatanSeeder');
     }
 }
 
@@ -125,17 +128,74 @@ class BantuanMasterSeeder extends Seeder
   App\BantuanMaster::truncate();
 
     $data = array(
-        array('nama' => 'Bibit'),
-        array('nama' => 'Pakan'),
-        array('nama' => 'Tali'),
-        array('nama' => 'Para-para'),
-        array('nama' => 'Perahu'),
-        array('nama' => 'Perahu/Kapal'),
-        array('nama' => 'Alat Tangkap'),
-        array('nama' => 'Mesin')
+        array('nama' => 'Bibit', 'jenis' => 'Pembudidaya'),
+        array('nama' => 'Pakan', 'jenis' => 'Pembudidaya'),
+        array('nama' => 'Tali', 'jenis' => 'Pembudidaya'),
+        array('nama' => 'Para-para', 'jenis' => 'Pembudidaya'),
+        array('nama' => 'Perahu', 'jenis' => 'Pembudidaya'),
+        array('nama' => 'Perahu/Kapal', 'jenis' => 'Nelayan'),
+        array('nama' => 'Alat Tangkap', 'jenis' => 'Nelayan'),
+        array('nama' => 'Mesin', 'jenis' => 'Nelayan')
       );
 
-      DB::table('bantuan_master')->insert($data);
+      DB::table('app_bantuan_master')->insert($data);
+
+  }
+}
+
+class SubSaranaSeeder extends Seeder
+{
+
+  public function run() {
+
+  App\Sarana::truncate();
+
+    $data = array(
+        array('jenis' => 'Budidaya Air Laut', 'sub' => 'Para-para', 'tipe' => 'Pembudidaya'),
+        array('jenis' => 'Budidaya Air Laut', 'sub' => 'Perahu', 'tipe' => 'Pembudidaya'),
+        array('jenis' => 'Budidaya Air Tawar', 'sub' => 'Luas Lahan < 1 Ha', 'tipe' => 'Pembudidaya'),
+        array('jenis' => 'Perahu Kapal', 'sub' => '< 5 GT', 'tipe' => 'Nelayan'),
+        array('jenis' => 'Alat Tangkap', 'sub' => 'Pancing', 'tipe' => 'Nelayan'),
+        array('jenis' => 'Mesin', 'sub' => '< 5 PK', 'tipe' => 'Nelayan'),
+      );
+
+      DB::table('app_sarana')->insert($data);
+
+  }
+}
+
+class SubUsahaSeeder extends Seeder
+{
+
+  public function run() {
+
+  App\Usaha::truncate();
+
+    $data = array(
+        array('nama' => 'KJA', 'jenis' => 'Budidaya Air Laut'),
+        array('nama' => 'Kolam Tanah', 'jenis' => 'Budidaya Air Tawar'),
+        array('nama' => 'Kolam Terpal', 'jenis' => 'Budidaya Air Tawar'),
+        array('nama' => 'Tambak', 'jenis' => 'Budidaya Air Payau'),
+      );
+
+      DB::table('app_usaha')->insert($data);
+
+  }
+}
+
+class JabatanSeeder extends Seeder
+{
+
+  public function run() {
+
+  App\Jabatan::truncate();
+
+    $data = array(
+        array('nama' => 'Ketua Kelompok Nelayan'),
+        array('nama' => 'Wakil Kelompok Nelayan'),
+      );
+
+      DB::table('app_jabatan')->insert($data);
 
   }
 }
@@ -156,7 +216,7 @@ class BantuanSeeder extends Seeder
         array('id_user' => 5, 'id_bantuan' => 7, 'tahun' => 2015)
       );
 
-      DB::table('bantuan')->insert($data);
+      DB::table('app_bantuan')->insert($data);
 
   }
 }
@@ -182,6 +242,6 @@ class Jabatan extends Seeder
       array('nama' => 'Anggota')
     );
 
-    DB::table('jabatan')->insert($data);
+    DB::table('app_jabatan')->insert($data);
   }
 }

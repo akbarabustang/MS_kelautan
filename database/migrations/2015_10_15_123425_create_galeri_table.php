@@ -12,7 +12,7 @@ class CreateGaleriTable extends Migration
      */
     public function up()
     {
-        Schema::create('msakti_galeri', function( Blueprint $table ) {
+        Schema::create('site_galeri', function( Blueprint $table ) {
             $table->increments('id');
             $table->string('judul',100);
             $table->string('nama_file',100);
@@ -26,6 +26,6 @@ class CreateGaleriTable extends Migration
      */
     public function down()
     {
-        Schema::drop('galeri');
+        Schema::drop('site_galeri');
     }
 }

@@ -13,10 +13,11 @@ class TableBantuanMaster extends Migration
     public function up()
     {
     
-        Schema::create('msakti_bantuan_master', function(Blueprint $t)
+        Schema::create('app_bantuan_master', function(Blueprint $t)
         {
             $t->increments('id')->unsigned();
             $t->string('nama');
+            $t->enum('jenis',['Pembudidaya','Nelayan']);
         });
     }
 
@@ -27,6 +28,6 @@ class TableBantuanMaster extends Migration
      */
     public function down()
     {
-        Schema::drop('bantuan_master');
+        Schema::drop('app_bantuan_master');
     }
 }

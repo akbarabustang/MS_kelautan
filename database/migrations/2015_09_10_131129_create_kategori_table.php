@@ -12,7 +12,7 @@ class CreateKategoriTable extends Migration
      */
     public function up()
     {
-        Schema::create('msakti_kategori', function (Blueprint $table) {
+        Schema::create('site_kategori', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama_kategori');
             $table->string('slug')->unique();
@@ -26,6 +26,6 @@ class CreateKategoriTable extends Migration
      */
     public function down()
     {
-        Schema::drop('kategori');
+        Schema::drop('site_kategori');
     }
 }

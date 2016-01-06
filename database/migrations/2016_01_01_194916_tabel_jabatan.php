@@ -12,7 +12,7 @@ class TabelJabatan extends Migration
      */
     public function up()
     {
-        Schema::create('msakti_jabatan', function (Blueprint $table) {
+        Schema::create('app_jabatan', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama',30);
         });
@@ -25,6 +25,6 @@ class TabelJabatan extends Migration
      */
     public function down()
     {
-        Schema::drop('jabatan');
+        Schema::drop('app_jabatan');
     }
 }

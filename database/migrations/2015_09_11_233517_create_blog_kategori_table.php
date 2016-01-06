@@ -12,7 +12,7 @@ class CreateBlogKategoriTable extends Migration
      */
     public function up()
     {
-        Schema::create('msakti_blog_kategori', function (Blueprint $table) {
+        Schema::create('site_blog_kategori', function (Blueprint $table) {
             $table->integer('id_kategori');
             $table->integer('id_blog');
         });
@@ -25,6 +25,6 @@ class CreateBlogKategoriTable extends Migration
      */
     public function down()
     {
-        Schema::drop('blog_kategori');
+        Schema::drop('site_blog_kategori');
     }
 }
