@@ -70,9 +70,13 @@
 								<a href="/app/master/bantuan">Bantuan</a>
 								<span class="icon-thumbnail">Bn</span>
 							</li>
-							<li class="sub-sarana">
+							<li class="sub-saranapembudidaya">
 								<a href="/app/master/sarana-pembudidaya">Sarana Pembudidaya</a>
 								<span class="icon-thumbnail">SP</span>
+							</li>
+							<li class="sub-sarananelayan">
+								<a href="/app/master/sarana-nelayan">Sarana Nelayan</a>
+								<span class="icon-thumbnail">SN</span>
 							</li>
 							<li class="sub-jenis">
 								<a href="/app/master/usaha">Usaha</a>

@@ -51,19 +51,19 @@
 							<div class="panel-body">
 								<h5>Sarana Nelayan</h5>
 								<p>* Sarana Nelayan adalah item yang digunakan pada halaman pembudidaya dan nelayan.</p>
-								<form class="style-form" method="GET" action="{{ route('sarana_tambah') }}">
+								<form class="style-form" method="GET" action="{{ route('sarananelayan_tambah') }}">
                 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 									<div class="form-group form-group-default required">
 										<label>Jenis Usaha Budidaya</label>
 										<select class="full-width" data-init-plugin="select2" name="jenis">
-											<option value="Budidaya Air Laut">Budidaya Air Laut</option>
-											<option value="Budidaya Air Tawar">Budidaya Air Tawar</option>
-											<option value="Budidaya Air Payau">Budidaya Air Payau</option>
+											<option value="Perahu/Kapal">Perahu/Kapal</option>
+											<option value="Alat Tangkap">Alat Tangkap</option>
+											<option value="Mesin">Mesin</option>
 										</select>
 									</div>
 									<div class="form-group form-group-default required">
 										<label>Sarana / Prasarana</label>
-										<input type="text" name="nama" class="form-control" required>
+										<input type="text" name="sub" class="form-control" required>
 									</div>
 									<div class="form-group">
 										<button class="btn btn-primary btn-cons">Tambah</button>
@@ -99,7 +99,7 @@
 													</div>
 												</td>
 												<td>{{ $sr->jenis }}</td>
-												<td>{{ $sr->nama }}</td>
+												<td>{{ $sr->sub }}</td>
 											</tr>
 											@endforeach
 										</tbody>
@@ -170,7 +170,7 @@
 @section('registerscript')
 	<script>
 		$(".menu-items .link-master").addClass("active open");
-		$(".menu-items .link-master .sub-sarana").addClass("active");
+		$(".menu-items .link-master .sub-sarananelayan").addClass("active");
 
 		$(function(){
 
@@ -187,7 +187,7 @@
 					return false;
 				}
 
-				$(".btn-hapus").attr('href',"{{ route('sarana_hapus') }}/"+id);
+				$(".btn-hapus").attr('href',"{{ route('sarananelayan_hapus') }}/"+id);
 
 			});
 		})();

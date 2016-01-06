@@ -17,7 +17,7 @@ class SaranaPembudidayaController extends Controller
      */
     public function getIndex()
     {
-        $data['sarana'] = Sarana::paginate(10);
+        $data['sarana'] = Sarana::where('tipe', 'Pembudidaya')->paginate(10);
         return view('app.master.saranapembudidaya', $data);
     }
 
@@ -28,7 +28,7 @@ class SaranaPembudidayaController extends Controller
         $dt->jenis = $request->jenis;
         $dt->sub = $request->sub;
         $dt->save();
-        return redirect()->route('sarana', $data);
+        return redirect()->route('saranapembudidaya', $data);
     }
 
     public function getHapus($id){
@@ -38,6 +38,6 @@ class SaranaPembudidayaController extends Controller
         foreach ($val as $value) {
             Sarana::where('id', $value)->delete();            
         }
-        return redirect()->route('sarana');
+        return redirect()->route('saranapembudidaya');
     }
 }

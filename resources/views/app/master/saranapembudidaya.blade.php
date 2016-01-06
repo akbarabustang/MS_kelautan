@@ -51,7 +51,7 @@
 							<div class="panel-body">
 								<h5>Sarana Pembudidaya</h5>
 								<p>* Sarana Pembudidaya adalah item yang digunakan pada halaman pembudidaya dan nelayan.</p>
-								<form class="style-form" method="GET" action="{{ route('sarana_tambah') }}">
+								<form class="style-form" method="GET" action="{{ route('saranapembudidaya_tambah') }}">
                 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 									<div class="form-group form-group-default required">
 										<label>Jenis Usaha Budidaya</label>
@@ -170,7 +170,7 @@
 @section('registerscript')
 	<script>
 		$(".menu-items .link-master").addClass("active open");
-		$(".menu-items .link-master .sub-sarana").addClass("active");
+		$(".menu-items .link-master .sub-saranapembudidaya").addClass("active");
 
 		$(function(){
 
@@ -187,7 +187,7 @@
 					return false;
 				}
 
-				$(".btn-hapus").attr('href',"{{ route('sarana_hapus') }}/"+id);
+				$(".btn-hapus").attr('href',"{{ route('saranapembudidaya_hapus') }}/"+id);
 
 			});
 		})();

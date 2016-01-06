@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\SubSarana;
+use App\Sarana;
 
 class SaranaNelayanController extends Controller
 {
@@ -17,18 +17,19 @@ class SaranaNelayanController extends Controller
      */
     public function getIndex()
     {
-        $data['sarana'] = SubSarana::paginate(10);
+        $data['sarana'] = Sarana::where('tipe', 'Nelayan')->paginate(10);
         return view('app.master.sarananelayan', $data);
     }
 
     public function getTambah(Request $request)
     {
-        $data['sarana'] = SubSarana::paginate(10);
-        $dt = new SubSarana;
-        $dt->nama = $request->nama;
+        $data['sarana'] = Sarana::paginate(10);
+        $dt = new Sarana;
         $dt->jenis = $request->jenis;
+        $dt->sub = $request->sub;
+        $dt->tipe = 'Nelayan';
         $dt->save();
-        return redirect()->route('sarana', $data);
+        return redirect()->route('sarananelayan', $data);
     }
 
     public function getHapus($id){
@@ -36,8 +37,8 @@ class SaranaNelayanController extends Controller
         $val = explode(",", $id);
 
         foreach ($val as $value) {
-            SubSarana::where('id', $value)->delete();            
+            Sarana::where('id', $value)->delete();            
         }
-        return redirect()->route('sarana');
+        return redirect()->route('sarananelayan');
     }
 }

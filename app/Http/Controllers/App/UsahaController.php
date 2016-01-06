@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\SubUsaha, App\Usaha;
+use App\Usaha;
 
 class UsahaController extends Controller
 {
@@ -17,14 +17,14 @@ class UsahaController extends Controller
      */
     public function getIndex()
     {
-        $data['usaha'] = SubUsaha::paginate(10);
+        $data['usaha'] = Usaha::paginate(10);
         return view ('app.master.usaha',$data);
     }
 
     public function getTambah(Request $request)
     {
-        $data['usaha'] = SubUsaha::paginate(10);
-        $dt = new SubUsaha;
+        $data['usaha'] = Usaha::paginate(10);
+        $dt = new Usaha;
         $dt->nama = $request->nama;
         $dt->jenis = $request->jenis;
         $dt->save();
@@ -36,7 +36,7 @@ class UsahaController extends Controller
         $val = explode(",", $id);
 
         foreach ($val as $value) {
-            SubUsaha::where('id', $value)->delete();            
+            Usaha::where('id', $value)->delete();            
         }
         return redirect()->route('usaha');
     }

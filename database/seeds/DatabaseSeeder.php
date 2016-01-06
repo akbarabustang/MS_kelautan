@@ -148,7 +148,7 @@ class SubSaranaSeeder extends Seeder
 
   public function run() {
 
-  App\SubSarana::truncate();
+  App\Sarana::truncate();
 
     $data = array(
         array('jenis' => 'Budidaya Air Laut', 'sub' => 'Para-para', 'tipe' => 'Pembudidaya'),
@@ -159,7 +159,7 @@ class SubSaranaSeeder extends Seeder
         array('jenis' => 'Mesin', 'sub' => '< 5 PK', 'tipe' => 'Nelayan'),
       );
 
-      DB::table('app_sub_sarana')->insert($data);
+      DB::table('app_sarana')->insert($data);
 
   }
 }
@@ -169,7 +169,7 @@ class SubUsahaSeeder extends Seeder
 
   public function run() {
 
-  App\SubUsaha::truncate();
+  App\Usaha::truncate();
 
     $data = array(
         array('nama' => 'KJA', 'jenis' => 'Budidaya Air Laut'),
@@ -178,7 +178,7 @@ class SubUsahaSeeder extends Seeder
         array('nama' => 'Tambak', 'jenis' => 'Budidaya Air Payau'),
       );
 
-      DB::table('app_sub_usaha')->insert($data);
+      DB::table('app_usaha')->insert($data);
 
   }
 }

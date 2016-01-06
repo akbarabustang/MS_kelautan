@@ -82,15 +82,15 @@ Route::group(['middleware' => 'MustLogin', 'namespace' => 'App' ], function () {
         ]);
     Route::controller('app/master/sarana-pembudidaya', 'SaranaPembudidayaController',
         [
-            'getIndex'  => 'sarana',
-            'getTambah' => 'sarana_tambah',
-            'getHapus'  => 'sarana_hapus',
+            'getIndex'  => 'saranapembudidaya',
+            'getTambah' => 'saranapembudidaya_tambah',
+            'getHapus'  => 'saranapembudidaya_hapus',
         ]);
     Route::controller('app/master/sarana-nelayan', 'SaranaNelayanController',
         [
-            'getIndex'  => 'sarana',
-            'getTambah' => 'sarana_tambah',
-            'getHapus'  => 'sarana_hapus',
+            'getIndex'  => 'sarananelayan',
+            'getTambah' => 'sarananelayan_tambah',
+            'getHapus'  => 'sarananelayan_hapus',
         ]);
 });
 

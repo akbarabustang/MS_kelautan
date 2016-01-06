@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TabelSubUsaha extends Migration
+class TabelUsaha extends Migration
 {
     /**
      * Run the migrations.
