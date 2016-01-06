@@ -27,6 +27,6 @@ class TableKepemilikanSarana extends Migration
      */
     public function down()
     {
-        Schema::drop('kepemilikan_sarana');
+        Schema::drop('app_kepemilikan_sarana');
     }
 }

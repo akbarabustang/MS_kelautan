@@ -301,7 +301,7 @@
 						<li><a href="#"><i class="pg-settings_small"></i> Pengaturan Akun</a></li>
 						<li><a href="#"><i class="pg-signals"></i> Bantuan</a></li>
 						<li class="bg-master-lighter">
-							<a href="#" class="clearfix">
+							<a href="{{ url('/app/logout') }}" class="clearfix">
 								<span class="pull-left">Logout</span>
 								<span class="pull-right"><i class="pg-power"></i></span>
 							</a>

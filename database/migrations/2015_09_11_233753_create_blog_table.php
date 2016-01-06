@@ -33,6 +33,6 @@ class CreateBlogTable extends Migration
      */
     public function down()
     {
-        Schema::drop('blog');
+        Schema::drop('site_blog');
     }
 }

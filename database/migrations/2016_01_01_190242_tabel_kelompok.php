@@ -30,6 +30,6 @@ class TabelKelompok extends Migration
      */
     public function down()
     {
-        Schema::drop('kelompok');
+        Schema::drop('app_kelompok');
     }
 }

@@ -48,8 +48,14 @@
 				<div class="p-l-50 m-l-20 p-r-50 m-r-20 p-t-50 m-t-30 sm-p-l-15 sm-p-r-15 sm-p-t-40">
 					<img src="{{ url('resources/assets/app/img/logo.png') }}" alt="logo" data-src="{{ url('resources/assets/app/img/logo.png') }}" data-src-retina="{{ url('resources/assets/app/img/logo_2x.png') }}" width="178">
 					<p class="p-t-35">Silahkan masuk untuk mengakses aplikasi</p>
+
+					@if ( Session::has('gagal') )
+						<div class="alert alert-danger" style="background:#ff0000;padding:5px;color:#fff">{{ Session::get('gagal') }}</div>
+					@endif
+
 					<!-- START Login Form -->
-					<form id="form-login" class="p-t-15" role="form" action="index.html">
+					<form id="form-login" class="p-t-15" role="form" method="post" action="{{ url('app/login') }}">
+						{{ csrf_field() }}
 						<!-- START Form Control-->
 						<div class="form-group form-group-default">
 							<label>Login</label>
@@ -69,7 +75,7 @@
 						<div class="row">
 							<div class="col-md-6 no-padding">
 								<div class="checkbox ">
-									<input type="checkbox" value="1" id="checkbox1">
+									<input type="checkbox" value="1" name="remember" id="checkbox1">
 									<label for="checkbox1">Keep Me Signed in</label>
 								</div>
 							</div>

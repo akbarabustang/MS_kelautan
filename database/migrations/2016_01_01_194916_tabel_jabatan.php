@@ -25,6 +25,6 @@ class TabelJabatan extends Migration
      */
     public function down()
     {
-        Schema::drop('jabatan');
+        Schema::drop('app_jabatan');
     }
 }

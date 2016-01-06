@@ -26,6 +26,6 @@ class CreateGaleriTable extends Migration
      */
     public function down()
     {
-        Schema::drop('galeri');
+        Schema::drop('site_galeri');
     }
 }

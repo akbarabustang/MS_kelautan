@@ -26,6 +26,6 @@ class TableJenisUsaha extends Migration
      */
     public function down()
     {
-        Schema::drop('jenis_usaha');
+        Schema::drop('app_jenis_usaha');
     }
 }

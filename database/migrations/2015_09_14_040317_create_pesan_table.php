@@ -31,6 +31,6 @@ class CreatePesanTable extends Migration
      */
     public function down()
     {
-        Schema::drop('pesan');
+        Schema::drop('site_pesan');
     }
 }

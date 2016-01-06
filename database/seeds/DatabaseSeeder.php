@@ -125,17 +125,17 @@ class BantuanMasterSeeder extends Seeder
   App\BantuanMaster::truncate();
 
     $data = array(
-        array('nama' => 'Bibit'),
-        array('nama' => 'Pakan'),
-        array('nama' => 'Tali'),
-        array('nama' => 'Para-para'),
-        array('nama' => 'Perahu'),
-        array('nama' => 'Perahu/Kapal'),
-        array('nama' => 'Alat Tangkap'),
-        array('nama' => 'Mesin')
+        array('nama' => 'Bibit', 'jenis' => 'Pembudidaya'),
+        array('nama' => 'Pakan', 'jenis' => 'Pembudidaya'),
+        array('nama' => 'Tali', 'jenis' => 'Pembudidaya'),
+        array('nama' => 'Para-para', 'jenis' => 'Pembudidaya'),
+        array('nama' => 'Perahu', 'jenis' => 'Pembudidaya'),
+        array('nama' => 'Perahu/Kapal', 'jenis' => 'Nelayan'),
+        array('nama' => 'Alat Tangkap', 'jenis' => 'Nelayan'),
+        array('nama' => 'Mesin', 'jenis' => 'Nelayan')
       );
 
-      DB::table('bantuan_master')->insert($data);
+      DB::table('app_bantuan_master')->insert($data);
 
   }
 }
@@ -156,7 +156,7 @@ class BantuanSeeder extends Seeder
         array('id_user' => 5, 'id_bantuan' => 7, 'tahun' => 2015)
       );
 
-      DB::table('bantuan')->insert($data);
+      DB::table('app_bantuan')->insert($data);
 
   }
 }
@@ -182,6 +182,6 @@ class Jabatan extends Seeder
       array('nama' => 'Anggota')
     );
 
-    DB::table('jabatan')->insert($data);
+    DB::table('app_jabatan')->insert($data);
   }
 }

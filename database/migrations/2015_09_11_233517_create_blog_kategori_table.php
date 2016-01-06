@@ -25,6 +25,6 @@ class CreateBlogKategoriTable extends Migration
      */
     public function down()
     {
-        Schema::drop('blog_kategori');
+        Schema::drop('site_blog_kategori');
     }
 }

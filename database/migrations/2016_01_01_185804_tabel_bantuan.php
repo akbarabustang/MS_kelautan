@@ -29,6 +29,6 @@ class TabelBantuan extends Migration
      */
     public function down()
     {
-        Schema::drop('bantuan');
+        Schema::drop('app_bantuan');
     }
 }

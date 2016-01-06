@@ -26,6 +26,6 @@ class TabelSubUsaha extends Migration
      */
     public function down()
     {
-        Schema::drop('sub_usaha');
+        Schema::drop('app_sub_usaha');
     }
 }

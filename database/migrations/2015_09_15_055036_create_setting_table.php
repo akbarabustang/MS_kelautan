@@ -30,6 +30,6 @@ class CreateSettingTable extends Migration
      */
     public function down()
     {
-        Schema::drop('setting');
+        Schema::drop('site_setting');
     }
 }

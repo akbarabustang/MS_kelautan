@@ -27,6 +27,6 @@ class TabelSubSarana extends Migration
      */
     public function down()
     {
-        Schema::drop('sub_sarana');
+        Schema::drop('app_sub_sarana');
     }
 }
