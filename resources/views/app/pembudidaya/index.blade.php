@@ -82,7 +82,9 @@
 													<div class="input-group">
 														<select class="full-width" data-init-plugin="select2">
 															<option value="">Pilih Kelompok...</option>
-															<option value="1">Nelayan All Star</option>
+															@foreach( $kelompok as $klp )
+																<option value="{{ $klp->id }}">{{ $klp->nama }}</option>
+															@endforeach
 														</select>
 														<div class="input-group-btn">
 															<button class="btn btn-primary" type="submit">+</button>
@@ -96,7 +98,9 @@
 													<div class="input-group">
 														<select class="full-width" data-init-plugin="select2">
 															<option value="">Pilih Jabatan...</option>
-															<option value="1">Ketua</option>
+															@foreach( $jabatan as $jab )
+																<option value="{{ $jab->id }}">{{ $jab->nama }}</option>
+															@endforeach
 														</select>
 														<div class="input-group-btn">
 															<button class="btn btn-primary" type="submit">+</button>
@@ -115,21 +119,21 @@
 											<div class="row">
 												<div class="col-sm-6">
 													<div class="form-group">
-														<select class="full-width" data-init-plugin="select2">
+														<select onchange="get_usaha(this.value)" class="full-width" data-init-plugin="select2">
 															<option value="">Pilih Jenis Usaha...</option>
-															<option value="1">Budidaya Air Laut</option>
-															<option value="2">Budidaya Air Tawar</option>
-															<option value="3">Budidaya Air Payau</option>
+															<option value="Budidaya Air Laut">Budidaya Air Laut</option>
+															<option value="Budidaya Air Tawar">Budidaya Air Tawar</option>
+															<option value="Budidaya Air Payau">Budidaya Air Payau</option>
 														</select>
 													</div>
 												</div>
 												<div class="col-sm-6">
 													<div class="form-group">
-														<select class="full-width" data-init-plugin="select2" disabled>
-															<option value="">Pilih Spesifik Usaha...</option>
-															<option value="1">Rumput Laut</option>
-															<option value="2">KJA</option>
-														</select>
+														<div id="usaha">
+															<select class="full-width" data-init-plugin="select2" disabled>
+																<option value="">Pilih Spesifik Usaha...</option>
+															</select>
+														</div>
 													</div>
 												</div>
 											</div>
@@ -144,21 +148,20 @@
 											<div class="row">
 												<div class="col-sm-6">
 													<div class="form-group">
-														<select class="full-width" data-init-plugin="select2">
-															<option value="">Pilih Jenis Usaha...</option>
-															<option value="1">Budidaya Air Laut</option>
-															<option value="2">Budidaya Air Tawar</option>
-															<option value="3">Budidaya Air Payau</option>
+														<select onchange="get_sarana(this.value)" class="full-width" data-init-plugin="select2">
+															<option value="Budidaya Air Laut">Budidaya Air Laut</option>
+															<option value="Budidaya Air Tawar">Budidaya Air Tawar</option>
+															<option value="Budidaya Air Payau">Budidaya Air Payau</option>
 														</select>
 													</div>
 												</div>
 												<div class="col-sm-6">
 													<div class="form-group">
-														<select class="full-width" data-init-plugin="select2" disabled>
-															<option value="">Pilih Sarana / Prasarana...</option>
-															<option value="1">Rumput Laut</option>
-															<option value="2">KJA</option>
-														</select>
+														<div id="sarana">
+															<select class="full-width" data-init-plugin="select2" disabled>
+																<option value="">Pilih Sarana / Prasarana...</option>
+															</select>
+														</div>
 													</div>
 												</div>
 											</div>
@@ -314,6 +317,27 @@
 		        $(".btn-hapus").attr('href',"{{ route('pembudidaya_hapus') }}/"+id);
 
 			});
+
 		});
+
+
+		function get_usaha(id){
+			var _token = $('meta[name="csrf-token"]').attr('content');
+			var url = "{{ url('app/pembudidaya/get-usaha') }}";
+			var url = url+"/"+id;
+			$.get(url, { id:id, _token:_token}, function(data){
+				$('#usaha').html(data);
+			});
+		}
+
+		function get_sarana(id){
+			var _token = $('meta[name="csrf-token"]').attr('content');
+			var url = "{{ url('app/pembudidaya/get-sarana') }}";
+			var url = url+"/"+id;
+			$.get(url, { id:id, _token:_token}, function(data){
+				$('#sarana').html(data);
+			});
+		}
+
 	</script>
 @endsection

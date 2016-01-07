@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\User, App\Kelompok;
+use App\User, App\Kelompok, App\Jabatan;
 
 class PembudidayaController extends Controller
 {
@@ -18,6 +18,9 @@ class PembudidayaController extends Controller
     public function getIndex()
     {
         $data['pembudidaya'] = User::where('profesi','Pembudidaya')->get();
+        // $data['kelompok'] = Kelompok::where('tipe','Pembudidaya')->get();
+        $data['kelompok'] = Kelompok::all();
+        $data['jabatan'] = Jabatan::all();
         return view ('app.pembudidaya.index',$data);
     }
 
