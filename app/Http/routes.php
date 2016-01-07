@@ -21,9 +21,15 @@ Route::group(['middleware' => 'MustLogin', 'namespace' => 'App' ], function () {
         return view('app.beranda.index');
     });
 
-    Route::get('/app/pembudidaya', function () {
-        return view('app.pembudidaya.index');
-    });
+    Route::controller('app/pembudidaya', 'PembudidayaController',
+    [
+        'getIndex'  => 'pembudidaya',
+        'getTambah'  => 'pembudidaya_tambah',
+        'postSimpan'  => 'pembudidaya_simpan',
+        'getEdit'  => 'pembudidaya_edit',
+        'postUpdate'  => 'pembudidaya_update',
+        'getHapus'  => 'pembudidaya_hapus',
+    ]);
 
     Route::get('/app/nelayan', function () {
         return view('app.nelayan.index');

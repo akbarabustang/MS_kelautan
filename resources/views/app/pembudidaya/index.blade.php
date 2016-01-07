@@ -41,6 +41,11 @@
 
 					<div class="row">
 						<div class="col-lg-7 col-md-6 ">
+
+							@if ( Session::has('success') ) 
+					    		@include('app/layout/partials/alert-sukses', ['message' => session('success')])
+							@endif
+
 							<!-- START PANEL -->
 							<div class="panel panel-transparent">
 								<div class="panel-body">
@@ -202,55 +207,27 @@
 													<th>Nama Kelompok</th>
 													<th>Jabatan Kelompok</th>
 													<th>Jenis Usaha</th>
-													<th>Sarana / Prasarana yang dimiliki</th>
+													<th>Bantuan</th>
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
-													<td>
-														<div class="checkbox">
-															<input type="checkbox" class="pilih" value="1" id="checkbox1">
-															<label for="checkbox1" class="m-l-20"></label>
-														</div>
-													</td>
-													<td>12345678910</td>
-													<td>Gifa Eriyanto</td>
-													<td>Jl. BTN Makkio Baji</td>
-													<td>Media SAKTI</td>
-													<td>Ketua</td>
-													<td>Rumput Laut</td>
-													<td>Perahu</td>
-												</tr>
-												<tr>
-													<td>
-														<div class="checkbox">
-															<input type="checkbox" class="pilih" value="1" id="checkbox1">
-															<label for="checkbox1" class="m-l-20"></label>
-														</div>
-													</td>
-													<td>12345678910</td>
-													<td>aGifa Eriyanto</td>
-													<td>Jl. BTN Makkio Baji</td>
-													<td>Media SAKTI</td>
-													<td>Ketua</td>
-													<td>Rumput Laut</td>
-													<td>Perahu</td>
-												</tr>
-												<tr>
-													<td>
-														<div class="checkbox">
-															<input type="checkbox" class="pilih" value="1" id="checkbox1">
-															<label for="checkbox1" class="m-l-20"></label>
-														</div>
-													</td>
-													<td>12345678910</td>
-													<td>cGifa Eriyanto</td>
-													<td>Jl. BTN Makkio Baji</td>
-													<td>Media SAKTI</td>
-													<td>Ketua</td>
-													<td>Rumput Laut</td>
-													<td>Perahu</td>
-												</tr>
+												@foreach( $pembudidaya as $pb )
+													<tr>
+														<td>
+															<div class="checkbox">
+																<input type="checkbox" class="pilih" value="{{ $pb->id }}" id="pb{{ $pb->id }}">
+																<label for="pb{{ $pb->id }}" class="m-l-20"></label>
+															</div>
+														</td>
+														<td><a href="{{ route('pembudidaya_edit',$pb->id) }}">{{ $pb->nik }}</a></td>
+														<td>{{ $pb->name }}</td>
+														<td>{{ $pb->alamat }}</td>
+														<td>{{ $pb->kelompok->nama }}</td>
+														<td>{{ $pb->jabatan->nama }}</td>
+														<td>{{ $pb->s }}</td>
+														<td style="text-align:center"><button class="btn btn-success btn-xs">Lihat</button></td>
+													</tr>
+												@endforeach
 											</tbody>
 										</table>
 									</div>
@@ -334,8 +311,7 @@
 		        else {
 				  return false;
 		        }
-
-		        $(".btn-hapus").attr('href',"{{ route('bantuan_hapus') }}/"+id);
+		        $(".btn-hapus").attr('href',"{{ route('pembudidaya_hapus') }}/"+id);
 
 			});
 		});

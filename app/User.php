@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+// use App\Jabatan;
 
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
@@ -26,4 +27,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function kelompok()
+    {
+        return $this->belongsTo('App\Kelompok','id_kelompok');
+    }
+
+    public function jabatan()
+    {
+        return $this->belongsTo('App\Jabatan', 'id_jabatan');
+    }
 }
